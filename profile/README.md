@@ -17,6 +17,7 @@ The organization contains meaningful examples that can be used with various tool
 | [Hello_LPCXpresso55S69](https://github.com/Arm-Examples/Hello_LPCXpresso55S69) | NXP LPCXpresso55S69 | CMSIS-Toolbox 2.0.0 |  |
 | [Hello_MIMXRT1060-EVKB](https://github.com/Arm-Examples/Hello_MIMXRT1060-EVKB) | NXP MIMXRT1060-EVKB | CMSIS-Toolbox 2.0.0 |  |
 | [Hello_MIMXRT1064-EVK](https://github.com/Arm-Examples/Hello_MIMXRT1064-EVK) | NXP MIMXRT1064-EVK | CMSIS-Toolbox 2.0.0 |  |
+| [Hello_NUCLEO-G474RE](https://github.com/Arm-Examples/Hello_NUCLEO-G474RE) | STMicroelectronics NUCLEO-G474RE | CMSIS-Toolbox 2.0.0 |  |
 | [Hello_V2M-MPS3-SSE-300-FVP](https://github.com/Arm-Examples/Hello_V2M-MPS3-SSE-300-FVP) | Arm Corstone-300 | CMSIS-Toolbox 2.0.0 |  |
 
 ### Blinky examples
