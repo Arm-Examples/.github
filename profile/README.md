@@ -19,6 +19,13 @@ The organization contains meaningful examples that can be used with various tool
 | [Hello_MIMXRT1064-EVK](https://github.com/Arm-Examples/Hello_MIMXRT1064-EVK) | NXP MIMXRT1064-EVK | CMSIS-Toolbox 2.0.0 |  |
 | [Hello_V2M-MPS3-SSE-300-FVP](https://github.com/Arm-Examples/Hello_V2M-MPS3-SSE-300-FVP) | Arm Corstone-300 | CMSIS-Toolbox 2.0.0 |  |
 
+### Blinky examples
+
+| Repository | Hardware used | Tool/IDE | Notes |
+|------------|---------------|----------|-------|
+| [Blinky_FRDM-K32L3A6](https://github.com/Arm-Examples/Blinky_FRDM-K32L3A6) | NXP Blinky_FRDM-K32L3A6 | CMSIS-Toolbox 2.0.0 | Blinks an LED, changes frequency after button press |
+| [Blinky_NUCLEO-G0B1RE](https://github.com/Arm-Examples/Blinky_NUCLEO-G0B1RE) | STMicroelectronics NUCLEO-G0B1RE | CMSIS-Toolbox 2.0.0 |  |
+
 ## AVH examples
 
 | Repository | Hardware used | Tool/IDE | Notes |
