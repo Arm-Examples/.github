@@ -12,20 +12,20 @@ The organization contains meaningful examples that can be used with various tool
 | Repository | Hardware used | Tool/IDE | Notes |
 |------------|---------------|----------|-------|
 | [Hello_B-U585I-IOT02A](https://github.com/Arm-Examples/Hello_B-U585I-IOT02A) | STMicroelectronics B-U585I-IOT02A | CMSIS-Toolbox 2.0.0 | Prints "Hello World, 0..9" on the serial console |
-| [Hello_FRDM-K32L3A6](https://github.com/Arm-Examples/Hello_FRDM-K32L3A6) | NXP FRDM-K32L3A6 | CMSIS-Toolbox 2.0.0 |  |
-| [Hello_IMXRT1050-EVKB](https://github.com/Arm-Examples/Hello_IMXRT1050-EVKB)   | NXP IMXRT1050-EVKB | CMSIS-Toolbox 2.0.0 |  |
-| [Hello_LPCXpresso55S69](https://github.com/Arm-Examples/Hello_LPCXpresso55S69) | NXP LPCXpresso55S69 | CMSIS-Toolbox 2.0.0 |  |
-| [Hello_MIMXRT1060-EVKB](https://github.com/Arm-Examples/Hello_MIMXRT1060-EVKB) | NXP MIMXRT1060-EVKB | CMSIS-Toolbox 2.0.0 |  |
-| [Hello_MIMXRT1064-EVK](https://github.com/Arm-Examples/Hello_MIMXRT1064-EVK) | NXP MIMXRT1064-EVK | CMSIS-Toolbox 2.0.0 |  |
-| [Hello_NUCLEO-G474RE](https://github.com/Arm-Examples/Hello_NUCLEO-G474RE) | STMicroelectronics NUCLEO-G474RE | CMSIS-Toolbox 2.0.0 |  |
-| [Hello_V2M-MPS3-SSE-300-FVP](https://github.com/Arm-Examples/Hello_V2M-MPS3-SSE-300-FVP) | Arm Corstone-300 | CMSIS-Toolbox 2.0.0 |  |
+| [Hello_FRDM-K32L3A6](https://github.com/Arm-Examples/Hello_FRDM-K32L3A6) | NXP FRDM-K32L3A6 | CMSIS-Toolbox 2.0.0 | Prints "Hello World, 0..9" on the serial console |
+| [Hello_IMXRT1050-EVKB](https://github.com/Arm-Examples/Hello_IMXRT1050-EVKB)   | NXP IMXRT1050-EVKB | CMSIS-Toolbox 2.0.0 | Prints "Hello World, 0..9" on the serial console |
+| [Hello_LPCXpresso55S69](https://github.com/Arm-Examples/Hello_LPCXpresso55S69) | NXP LPCXpresso55S69 | CMSIS-Toolbox 2.0.0 | Prints "Hello World, 0..9" on the serial console |
+| [Hello_MIMXRT1060-EVKB](https://github.com/Arm-Examples/Hello_MIMXRT1060-EVKB) | NXP MIMXRT1060-EVKB | CMSIS-Toolbox 2.0.0 | Prints "Hello World, 0..9" on the serial console |
+| [Hello_MIMXRT1064-EVK](https://github.com/Arm-Examples/Hello_MIMXRT1064-EVK) | NXP MIMXRT1064-EVK | CMSIS-Toolbox 2.0.0 | Prints "Hello World, 0..9" on the serial console |
+| [Hello_NUCLEO-G474RE](https://github.com/Arm-Examples/Hello_NUCLEO-G474RE) | STMicroelectronics NUCLEO-G474RE | CMSIS-Toolbox 2.0.0 | Prints "Hello World, 0..9" on the serial console |
+| [Hello_V2M-MPS3-SSE-300-FVP](https://github.com/Arm-Examples/Hello_V2M-MPS3-SSE-300-FVP) | Arm Corstone-300 | CMSIS-Toolbox 2.0.0 | Prints "Hello World, 0..9" on the serial console |
 
 ### Blinky examples
 
 | Repository | Hardware used | Tool/IDE | Notes |
 |------------|---------------|----------|-------|
 | [Blinky_FRDM-K32L3A6](https://github.com/Arm-Examples/Blinky_FRDM-K32L3A6) | NXP Blinky_FRDM-K32L3A6 | CMSIS-Toolbox 2.0.0 | Blinks an LED, changes frequency after button press |
-| [Blinky_NUCLEO-G0B1RE](https://github.com/Arm-Examples/Blinky_NUCLEO-G0B1RE) | STMicroelectronics NUCLEO-G0B1RE | CMSIS-Toolbox 2.0.0 |  |
+| [Blinky_NUCLEO-G0B1RE](https://github.com/Arm-Examples/Blinky_NUCLEO-G0B1RE) | STMicroelectronics NUCLEO-G0B1RE | CMSIS-Toolbox 2.0.0 | Blinks an LED, changes frequency after button press |
 
 ## AVH examples
 
