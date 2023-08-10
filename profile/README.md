@@ -27,6 +27,12 @@ The organization contains meaningful examples that can be used with various tool
 | [Blinky_FRDM-K32L3A6](https://github.com/Arm-Examples/Blinky_FRDM-K32L3A6) | NXP Blinky_FRDM-K32L3A6 | CMSIS-Toolbox 2.0.0 | Blinks an LED, changes frequency after button press |
 | [Blinky_NUCLEO-G0B1RE](https://github.com/Arm-Examples/Blinky_NUCLEO-G0B1RE) | STMicroelectronics NUCLEO-G0B1RE | CMSIS-Toolbox 2.0.0 | Blinks an LED, changes frequency after button press |
 
+### Machine learning (ML) examples
+
+| Repository | Hardware used | Tool/IDE | Notes |
+|------------|---------------|----------|-------|
+| [mlek-cmsis-pack-examples](https://github.com/Arm-Examples/mlek-cmsis-pack-examples) | Various | CMSIS-Toolbox, Keil Studio |  Machine Learning (ML) examples using the ML Embedded Evaluation Kit. |
+
 ## AVH examples
 
 | Repository | Hardware used | Tool/IDE | Notes |
@@ -47,4 +53,3 @@ The organization contains meaningful examples that can be used with various tool
 | [KSC_Debug_LPCXpresso55S69](https://github.com/Arm-Examples/KSC_Debug_LPCXpresso55S69) | NXP LPCXpresso55S69 | CMSIS-Toolbox, Keil Studio Cloud | Simple application to test KSC debug functionality. |
 | [KSC_Debug_MIMXRT1064-EVK](https://github.com/Arm-Examples/KSC_Debug_MIMXRT1064-EVK) | NXP MIMXRT1064-EVK | CMSIS-Toolbox, Keil Studio Cloud | Simple application to test KSC debug functionality. |
 | [MDK-MW-PoC](https://github.com/Arm-Examples/MDK-MW-PoC) |STMicroelectronics STM32F429I-Discovery | CMSIS-Toolbox, Keil Studio | MDK-Middleware application using the csloution project format. |
-| [mlek-cmsis-pack-examples](https://github.com/Arm-Examples/mlek-cmsis-pack-examples) | Various | CMSIS-Toolbox, Keil Studio |  Machine Learning (ML) examples using the ML Embedded Evaluation Kit. |
