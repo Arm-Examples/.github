@@ -26,6 +26,7 @@ The organization contains meaningful examples that can be used with various tool
 |------------|---------------|----------|-------|
 | [Blinky_FRDM-K32L3A6](https://github.com/Arm-Examples/Blinky_FRDM-K32L3A6) | NXP Blinky_FRDM-K32L3A6 | CMSIS-Toolbox 2.0.0 | Blinks an LED, changes frequency after button press |
 | [Blinky_NUCLEO-G0B1RE](https://github.com/Arm-Examples/Blinky_NUCLEO-G0B1RE) | STMicroelectronics NUCLEO-G0B1RE | CMSIS-Toolbox 2.0.0 | Blinks an LED, changes frequency after button press |
+| [Blinky_NUCLEO-F756ZG](https://github.com/Arm-Examples/Blinky_NUCLEO-F756ZG) | STMicroelectronics NUCLEO-F756ZG | CMSIS-Toolbox 2.0.0 | Blinks an LED, changes frequency after button press |
 
 ### Machine learning (ML) examples
 
@@ -54,3 +55,4 @@ The organization contains meaningful examples that can be used with various tool
 | [KSC_Debug_MIMXRT1064-EVK](https://github.com/Arm-Examples/KSC_Debug_MIMXRT1064-EVK) | NXP MIMXRT1064-EVK | CMSIS-Toolbox, Keil Studio Cloud | Simple application to test KSC debug functionality. |
 | [MDK-MW-PoC](https://github.com/Arm-Examples/MDK-MW-PoC) |STMicroelectronics STM32F429I-Discovery | CMSIS-Toolbox, Keil Studio | MDK-Middleware application using the csloution project format. |
 | [Using CMSIS-View and CMSIS-Compiler](https://github.com/Arm-Examples/CMSIS-View_and_CMSIS-Compiler) |Various | µVision | Example projects from the CMSIS v6 webinar about CMSIS-View and CMSIS-Compiler. |
+| [AVH FVPs on MacOS](https://github.com/Arm-Examples/fvps-on-mac) |Mav | All | This repo contains a set of scripts that allow you to run AVH FVPs on MacOS using Docker. |
