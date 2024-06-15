@@ -38,10 +38,8 @@ The organization contains meaningful examples that can be used with various tool
 
 | Repository | Hardware used | Tool/IDE | Notes |
 |------------|---------------|----------|-------|
-| [AVH-Jenkins](https://github.com/Arm-Examples/AVH-Jenkins) | AVH | Jenkins | Example of a Jenkins server running an ML application on Arm Virtual Hardware in the cloud. |
-| [AVH-Virtual-Peripherals](https://github.com/Arm-Examples/AVH-Virtual-Peripherals) | AVH (VHT_MPS2_Cortex-M0) | AVH (locally) | Example of AVH models and their python extension implementing virtual peripherals. |
-| [cloud_ci_demo_basic](https://github.com/Arm-Examples/cloud_ci_demo_basic) | AVH (V2M_MPS2_SSE_300) | AVH, µVision | Example of GitHub Actions together with a Docker image to run CI test automatically in the cloud. |
-| [cloud_ci_demo_rv2](https://github.com/Arm-Examples/cloud_ci_demo_rv2) | AVH (V2M_MPS2_SSE_300) | AVH, µVision | Sophisticated example of GitHub Actions together with a Docker image to run CI test automatically in the cloud. |
+| [AVH_CI_Template](https://github.com/Arm-Examples/AVH_CI_Template) | AVH (FVP_MPS2_Cortex-M3) | CMSIS-Toolbox, AVH | CI Template for unit test automation |
+| [AVH-Virtual-Peripherals](https://github.com/Arm-Examples/AVH-Virtual-Peripherals) | AVH (FVP_MPS2_Cortex-M0) | AVH (locally) | Example of AVH models and their python extension implementing virtual peripherals. |
 | [Hello_AVH](https://github.com/Arm-Examples/Hello_AVH) | Arm Corstone-310 | CMSIS-Toolbox, AVH | Simple Hello World example. |
 
 ## Other examples
@@ -49,7 +47,7 @@ The organization contains meaningful examples that can be used with various tool
 | Repository | Hardware used | Tool/IDE | Notes |
 |------------|---------------|----------|-------|
 | [CMSIS-Stream-PoC](https://github.com/Arm-Examples/CMSIS-Stream-PoC) | NXP LPC1700 | µVision | Example project showing the usage of the CMSIS-Stream software component. |
-| [keil-studio-get-started](https://github.com/Arm-Examples/keil-studio-get-started) | Arm VHT_MPS2_Cortex-M3 | CMSIS-Toolbox, Keil Studio (VS Code Extensions) | Get started example for use in Keil Studio. |
+| [keil-studio-get-started](https://github.com/Arm-Examples/keil-studio-get-started) | AVH (FVP_MPS2_Cortex-M3) | CMSIS-Toolbox, Keil Studio (VS Code Extensions) | Get started example for use in Keil Studio. |
 | [KSC_Debug_FRDM-K32L3A6](https://github.com/Arm-Examples/KSC_Debug_FRDM-K32L3A6) | NXP FRDM-K32L3A6 | CMSIS-Toolbox, Keil Studio Cloud | Simple application to test KSC debug functionality. |
 | [KSC_Debug_LPCXpresso55S69](https://github.com/Arm-Examples/KSC_Debug_LPCXpresso55S69) | NXP LPCXpresso55S69 | CMSIS-Toolbox, Keil Studio Cloud | Simple application to test KSC debug functionality. |
 | [KSC_Debug_MIMXRT1064-EVK](https://github.com/Arm-Examples/KSC_Debug_MIMXRT1064-EVK) | NXP MIMXRT1064-EVK | CMSIS-Toolbox, Keil Studio Cloud | Simple application to test KSC debug functionality. |
