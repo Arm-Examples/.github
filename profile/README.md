@@ -2,7 +2,7 @@
 
 The organization contains meaningful examples that can be used with various tools and IDEs. There are examples with different complexity levels available:
 - [CMSIS-Toolbox examples](#cmsis-toolbox-2-examples) help you getting started with your hardware and help you to check the correct tools set up.
-- Examples for [AVH](#avh-examples) demonstrate how to set up virtual simulation environments on your local machine and in the cloud.
+- Examples for [AVH-FVP](#avh-fvpexamples) demonstrate how to set up virtual simulation environments on your local machine and in the cloud.
 - Various [other examples](#other-examples) demonstrating different aspects of embedded development.
 
 ## CMSIS-Toolbox examples
@@ -34,7 +34,7 @@ The organization contains meaningful examples that can be used with various tool
 |------------|---------------|----------|-------|
 | [mlek-cmsis-pack-examples](https://github.com/Arm-Examples/mlek-cmsis-pack-examples) | Various | CMSIS-Toolbox, Keil Studio |  Machine Learning (ML) examples using the ML Embedded Evaluation Kit. |
 
-## AVH examples
+## AVH-FVP examples
 
 | Repository | Hardware used | Tool/IDE | Notes |
 |------------|---------------|----------|-------|
