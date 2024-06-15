@@ -1,11 +1,11 @@
 # About Arm Examples
 
 The organization contains meaningful examples that can be used with various tools and IDEs. There are examples with different complexity levels available:
-- [CMSIS-Toolbox 2.0.0 examples](#cmsis-toolbox-2.0.0-examples) help you getting started with your hardware and help you to check the correct tools set up.
+- [CMSIS-Toolbox 2 examples](#cmsis-toolbox-2-examples) help you getting started with your hardware and help you to check the correct tools set up.
 - Examples for [AVH](#avh-examples) demonstrate how to set up virtual simulation environments on your local machine and in the cloud.
 - Various [other examples](#other-examples) demonstrating different aspects of embedded development.
 
-## CMSIS-Toolbox 2.0.0 examples
+## CMSIS-Toolbox 2 examples
 
 ### Hello world examples
 
