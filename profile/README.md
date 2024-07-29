@@ -40,7 +40,8 @@ The organization contains meaningful examples that can be used with various tool
 |------------|---------------|----------|-------|
 | [AVH_CI_Template](https://github.com/Arm-Examples/AVH_CI_Template) | AVH (FVP_MPS2_Cortex-M3) | CMSIS-Toolbox, AVH | CI Template for unit test automation |
 | [AVH-Virtual-Peripherals](https://github.com/Arm-Examples/AVH-Virtual-Peripherals) | AVH (FVP_MPS2_Cortex-M0) | AVH (locally) | Example of AVH models and their python extension implementing virtual peripherals. |
-| [Hello_AVH](https://github.com/Arm-Examples/Hello_AVH) | Arm Corstone-310 | CMSIS-Toolbox, AVH | Simple Hello World example. |
+| [AVH-VSI](https://github.com/Arm-Examples/AVH-VSI) | Arm Corstone-310 | CMSIS-Toolbox, AVH | Simple Hello World example using VSI interfaces. |
+| [AVH-Hello](https://github.com/Arm-Examples/AVH-Hello) | Multiple AVH FVPs | CMSIS-Toolbox, AVH | CI project with a test matrix that uses GitHub Actions on a GitHub-hosted runner. |
 
 ## Other examples
 
