@@ -38,10 +38,12 @@ The organization contains meaningful examples that can be used with various tool
 
 | Repository | Hardware used | Tool/IDE | Notes |
 |------------|---------------|----------|-------|
-| [AVH_CI_Template](https://github.com/Arm-Examples/AVH_CI_Template) | AVH (FVP_MPS2_Cortex-M3) | CMSIS-Toolbox, AVH | CI Template for unit test automation |
-| [AVH-Virtual-Peripherals](https://github.com/Arm-Examples/AVH-Virtual-Peripherals) | AVH (FVP_MPS2_Cortex-M0) | AVH (locally) | Example of AVH models and their python extension implementing virtual peripherals. |
-| [AVH-VSI](https://github.com/Arm-Examples/AVH-VSI) | Arm Corstone-310 | CMSIS-Toolbox, AVH | Simple Hello World example using VSI interfaces. |
-| [AVH-Hello](https://github.com/Arm-Examples/AVH-Hello) | Multiple AVH FVPs | CMSIS-Toolbox, AVH | CI project with a test matrix that uses GitHub Actions on a GitHub-hosted runner. |
+| [AVH-Hello](https://github.com/Arm-Examples/AVH-Hello) | Multiple AVH FVPs | CMSIS-Toolbox, AVH-FVP | Simple Hello World project with a CI test matrix that uses GitHub Actions |
+| [AVH_CI_Template](https://github.com/Arm-Examples/AVH_CI_Template) | FVP_MPS2_Cortex-M3 | CMSIS-Toolbox, AVH-FVP | CI Template for unit test automation |
+| [AVH-VSI](https://github.com/Arm-Examples/AVH-VSI) | Arm Corstone FVPs | CMSIS-Toolbox, AVH-FVP | Simple examples using virtual streaming interface (VSI) |
+| [AVH-Virtual-Peripherals](https://github.com/Arm-Examples/AVH-Virtual-Peripherals) | FVP_MPS2_Cortex-M0 | AVH-FVP | Example of AVH models and their python extension implementing virtual peripherals |
+
+
 
 ## Other examples
 
