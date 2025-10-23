@@ -1,9 +1,21 @@
 # About Arm Examples
 
-The organization contains meaningful examples that can be used with various tools and IDEs. There are examples with different complexity levels available:
-- [CMSIS-Toolbox examples](#cmsis-toolbox-2-examples) help you getting started with your hardware and help you to check the correct tools set up.
-- Examples for [AVH-FVP](#avh-fvpexamples) demonstrate how to set up virtual simulation environments on your local machine and in the cloud.
-- Various [other examples](#other-examples) demonstrating different aspects of embedded development.
+The organization contains meaningful examples that can be used with various tools and IDEs.
+
+## Keil MDK version 6 examples
+
+| Repository | Hardware used | Tool/IDE | Content |
+|------------|---------------|----------|-------|
+| [cmsis-mlek-examples](https://github.com/Arm-Examples/cmsis-mlek-examples) | Alif Ensemble E7 | CMSIS-Toolbox, Keil Studio |  Pre-configured machine learning (ML) projects using the ML Embedded Evaluation Kit. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4). |
+| [cmsis-mlek](https://github.com/Arm-Examples/cmsis-mlek) | Various | CMSIS-Toolbox, Keil Studio |  CMSIS-Pack repository with ML template projects for various models and devices. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4). |
+| [SDS-Examples](https://github.com/Arm-Examples/SDS-Examples) | Various | CMSIS-Toolbox, Keil Studio | Examples showing the usage of the Synchronous Data Streaming (SDS) Framework. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250916_SDS_Webinar.mp4). |
+| [SDS-Framework](https://github.com/Arm-Software/SDS-Framework) | Various | CMSIS-Toolbox, Keil Studio | Framework software with template applications that can be reused on different hardware. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250916_SDS_Webinar.mp4). |
+| [Safety-Example-Infineon-T2G](https://github.com/Arm-Examples/Safety-Example-Infineon-T2G) | Various | CMSIS-Toolbox, Keil Studio | Traffic light example and CMSIS-Driver verification project. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250930_FuSa_TRAVEO.mp4). |
+| [Safety-Example-STM32](https://github.com/Arm-Examples/Safety-Example-STM32) | Various | CMSIS-Toolbox, Keil Studio | Traffic light example using safety features of Keil RTX5. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250930_FuSa_TRAVEO.mp4). |
+| [AVH](https://github.com/Arm-Software/AVH) | N/A | N/A | Documentation and virtual streaming interface API. |
+| [AVH-MLOps](https://github.com/Arm-Software/AVH-MLOps) | Various Arm FVPs | CMSIS-Toolbox, Keil Studio, AVH | Foundational components for MLOps systems, such as Docker container, GitHUb Actions, and basic examples. |
+| [AVH-VSI](https://github.com/Arm-Examples/AVH-VSI) | Arm Corstone-310 | CMSIS-Toolbox, Keil Studio, AVH | Examples demonstrating the use of virtual peripherals on Arm FVPs. |
+| [AVH-Hello](https://github.com/Arm-Examples/AVH-Hello) | Multiple AVH FVPs | CMSIS-Toolbox, AVH | CI project with a test matrix that uses GitHub Actions on a GitHub-hosted runner. |
 
 ## CMSIS-Toolbox examples
 
