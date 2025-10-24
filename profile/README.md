@@ -7,7 +7,7 @@ The organization contains meaningful examples that can be used with various tool
 The following repositories contain ready-to-run examples:
 
 | Repository | Hardware used | Tool/IDE | Content |
-|------------|---------------|----------|-------|
+|------------|---------------|----------|---------|
 | [cmsis-mlek-examples](https://github.com/Arm-Examples/cmsis-mlek-examples) | Alif Ensemble E7 | CMSIS-Toolbox, Keil Studio |  Pre-configured machine learning (ML) projects using the ML Embedded Evaluation Kit. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4). |
 | [SDS-Examples](https://github.com/Arm-Examples/SDS-Examples) | Various | CMSIS-Toolbox, Keil Studio | Examples showing the usage of the Synchronous Data Streaming (SDS) Framework. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250916_SDS_Webinar.mp4). |
 | [Safety-Example-Infineon-T2G](https://github.com/Arm-Examples/Safety-Example-Infineon-T2G) | Various | CMSIS-Toolbox, Keil Studio | [Fusa RTS](https://developer.arm.com/Tools%20and%20Software/Keil%20MDK/FuSa%20Run-Time%20System) traffic light example, CMSIS-Driver development and verification. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250930_FuSa_TRAVEO.mp4). |
@@ -18,7 +18,7 @@ The following repositories contain ready-to-run examples:
 The following repositories contain CMSIS-Packs that include examples:
 
 | Repository | Hardware used | Tool/IDE | Content |
-|------------|---------------|----------|-------|
+|------------|---------------|----------|---------|
 | [cmsis-mlek](https://github.com/Arm-Examples/cmsis-mlek) | Various | CMSIS-Toolbox, Keil Studio |  CMSIS-Pack repository with ML template projects for various models and devices. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4). |
 | [SDS-Framework](https://github.com/Arm-Software/SDS-Framework) | Various | CMSIS-Toolbox, Keil Studio | Framework software with template applications that can be reused on different hardware. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250916_SDS_Webinar.mp4). |
 | [AVH](https://github.com/Arm-Software/AVH) | N/A | N/A | Documentation and virtual streaming interface API. |
@@ -26,8 +26,8 @@ The following repositories contain CMSIS-Packs that include examples:
 The following repository shows how to create a Docker for MLOps purposes:
 
 | Repository | Hardware used | Tool/IDE | Content |
-|------------|---------------|----------|-------|
-| [cmsis-mlek-examples](https://github.com/Arm-Examples/cmsis-mlek-examples) | Alif Ensemble E7 | CMSIS-Toolbox, Keil Studio |  Pre-configured machine learning (ML) projects using the ML Embedded Evaluation Kit. [Watch the related webinar]| [AVH-MLOps](https://github.com/Arm-Software/AVH-MLOps) | Various Arm FVPs | CMSIS-Toolbox, Keil Studio, AVH | Foundational components for MLOps systems, such as Docker container, GitHUb Actions, and basic examples. |
+|------------|---------------|----------|---------|
+| [AVH-MLOps](https://github.com/Arm-Software/AVH-MLOps) | Various Arm FVPs | CMSIS-Toolbox, Keil Studio, AVH | Foundational components for MLOps systems, such as Docker container, GitHUb Actions, and basic examples. |
 
 ## CMSIS-Toolbox examples
 
