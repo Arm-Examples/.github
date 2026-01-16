@@ -1,76 +1,68 @@
-# About Arm Examples
+# Examples for Embedded Developers
 
-The organization contains meaningful examples that can be used with various tools and IDEs.
+Arm-Examples contains ready-to-run embedded projects showcasing RTOS, machine learning, functional safety, and CI/CD automation across diverse Arm-based hardware platforms. 
 
-## Keil MDK version 6 examples
+[<img src="IntroVideo.png" alt="Introduction to Keil Studio" width="318" height="185" align="left">](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250715_Introduction_to_Keil_Studio.mp4 "Introduction to Keil Studio")
 
-The following repositories contain ready-to-run examples:
+These examples leverage Keil Studio, CMSIS-Toolbox, and Arm FVP models with various compilers (Arm Compiler 6, GCC, LLVM) enabling both desktop and cloud-based CI/CD workflows with physical hardware and simulation models.
 
-| Repository | Hardware used | Tool/IDE | Content |
-|------------|---------------|----------|---------|
-| [cmsis-mlek-examples](https://github.com/Arm-Examples/cmsis-mlek-examples) | Alif Ensemble E7 | CMSIS-Toolbox, Keil Studio |  Pre-configured machine learning (ML) projects using the ML Embedded Evaluation Kit. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4). |
-| [SDS-Examples](https://github.com/Arm-Examples/SDS-Examples) | Various | CMSIS-Toolbox, Keil Studio | Examples showing the usage of the Synchronous Data Streaming (SDS) Framework. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250916_SDS_Webinar.mp4). |
-| [Safety-Example-Infineon-T2G](https://github.com/Arm-Examples/Safety-Example-Infineon-T2G) | Various | CMSIS-Toolbox, Keil Studio | [Fusa RTS](https://developer.arm.com/Tools%20and%20Software/Keil%20MDK/FuSa%20Run-Time%20System) traffic light example, CMSIS-Driver development and verification. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250930_FuSa_TRAVEO.mp4). |
-| [Safety-Example-STM32](https://github.com/Arm-Examples/Safety-Example-STM32) | Various | CMSIS-Toolbox, Keil Studio | [Fusa RTS](https://developer.arm.com/Tools%20and%20Software/Keil%20MDK/FuSa%20Run-Time%20System) traffic light example. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250930_FuSa_TRAVEO.mp4). |
-| [AVH-VSI](https://github.com/Arm-Examples/AVH-VSI) | Arm Corstone-310 | CMSIS-Toolbox, Keil Studio, AVH | Examples demonstrating the use of virtual peripherals on Arm FVPs. |
-| [AVH-Hello](https://github.com/Arm-Examples/AVH-Hello) | Multiple AVH FVPs | CMSIS-Toolbox, AVH | CI project with a test matrix that uses GitHub Actions on a GitHub-hosted runner. |
+Keil Studio is Arm's new IDE for embedded development directly in Visual Studio Code and the successor to the µVision IDE. **[Watch this video to learn more...](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250715_Introduction_to_Keil_Studio.mp4 "Introduction to Keil Studio")**
 
-The following repositories contain CMSIS-Packs that include examples:
+<br clear="left"/>
 
-| Repository | Hardware used | Tool/IDE | Content |
-|------------|---------------|----------|---------|
-| [cmsis-mlek](https://github.com/Arm-Examples/cmsis-mlek) | Various | CMSIS-Toolbox, Keil Studio |  CMSIS-Pack repository with ML template projects for various models and devices. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4). |
-| [SDS-Framework](https://github.com/Arm-Software/SDS-Framework) | Various | CMSIS-Toolbox, Keil Studio | Framework software with template applications that can be reused on different hardware. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250916_SDS_Webinar.mp4). |
-| [AVH](https://github.com/Arm-Software/AVH) | N/A | N/A | Documentation and virtual streaming interface API. |
+## RTOS Applications
 
-The following repository shows how to create a Docker for MLOps purposes:
+Keil Studio is designed for all types of embedded projects, ranging from bare-metal firmware to complex RTOS-based systems. How to choose the right option: bare-metal, Keil RTX, FreeRTOS, and Zephyr? [**Learn more ...**](BareMetal2RTOS.md "Bare-Metal or RTOS")
 
-| Repository | Hardware used | Tool/IDE | Content |
-|------------|---------------|----------|---------|
-| [AVH-MLOps](https://github.com/Arm-Software/AVH-MLOps) | Various Arm FVPs | CMSIS-Toolbox, Keil Studio, AVH | Foundational components for MLOps systems, such as Docker container, GitHUb Actions, and basic examples. |
+| Example | Hardware | Content |
+|:--------|:---------|:--------|
+| [Hello_World](https://github.com/Arm-Examples/Hello_NUCLEO-G474RE) | ST NUCLEO-G474RE | Keil RTX configuration; prints "Hello World, 0..9" on the serial console. |
+| [Middleware_USB_FS](https://github.com/Arm-Examples/Middleware_USB_FS) |  STM32F7 | Using MDK-Middleware with USB Device and File System. It also shows how to target custom hardware. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250729_Working_with_STM32_devices.mp4). |
+| [CMSIS-Zephyr](https://github.com/Arm-Examples/SDS-Examples) | Various | Examples showing the usage Zephyr applications with Keil Studio. |
 
-## CMSIS-Toolbox examples
+## Edge AI and Machine Learning
 
-### Hello world examples
+[<img src="ML_Video.png" alt="Development flow for optimized Edge AI devices" width="318" height="170" align="left">](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4?#t=07:22 "Development flow for optimized Edge AI devices")
 
-| Repository | Hardware used | Tool/IDE | Notes |
-|------------|---------------|----------|-------|
-| [Hello_B-U585I-IOT02A](https://github.com/Arm-Examples/Hello_B-U585I-IOT02A) | STMicroelectronics B-U585I-IOT02A | CMSIS-Toolbox | Prints "Hello World, 0..9" on the serial console |
-| [Hello_FRDM-K32L3A6](https://github.com/Arm-Examples/Hello_FRDM-K32L3A6) | NXP FRDM-K32L3A6 | CMSIS-Toolbox | Prints "Hello World, 0..9" on the serial console |
-| [Hello_IMXRT1050-EVKB](https://github.com/Arm-Examples/Hello_IMXRT1050-EVKB)   | NXP IMXRT1050-EVKB | CMSIS-Toolbox | Prints "Hello World, 0..9" on the serial console |
-| [Hello_LPCXpresso55S69](https://github.com/Arm-Examples/Hello_LPCXpresso55S69) | NXP LPCXpresso55S69 | CMSIS-Toolbox | Prints "Hello World, 0..9" on the serial console |
-| [Hello_MIMXRT1060-EVKB](https://github.com/Arm-Examples/Hello_MIMXRT1060-EVKB) | NXP MIMXRT1060-EVKB | CMSIS-Toolbox | Prints "Hello World, 0..9" on the serial console |
-| [Hello_MIMXRT1064-EVK](https://github.com/Arm-Examples/Hello_MIMXRT1064-EVK) | NXP MIMXRT1064-EVK | CMSIS-Toolbox | Prints "Hello World, 0..9" on the serial console |
-| [Hello_NUCLEO-G474RE](https://github.com/Arm-Examples/Hello_NUCLEO-G474RE) | STMicroelectronics NUCLEO-G474RE | CMSIS-Toolbox | Prints "Hello World, 0..9" on the serial console |
+Comprehensive machine learning capabilities are available with ML Evaluation Kit (MLEK), Synchronous Data Streaming (SDS) Framework, LiteRT (TensorFlow), and Executourch that utilizes CMSIS-NN (for Cortex-M) or Vela (for Ethos-U). **[Watch this video to learn more...](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4?#t=07:22 "Development flow for optimized Edge AI devices")**
 
-### Blinky examples
+<br clear="left"/>
 
-| Repository | Hardware used | Tool/IDE | Notes |
-|------------|---------------|----------|-------|
-| [Blinky_FRDM-K32L3A6](https://github.com/Arm-Examples/Blinky_FRDM-K32L3A6) | NXP Blinky_FRDM-K32L3A6 | CMSIS-Toolbox | Blinks an LED, changes frequency after button press |
+<br/>
 
-### Machine learning (ML) examples
+| Example | Hardware | Content |
+|:--------|:---------|:--------|
+| [CMSIS-MLEK-Examples](https://github.com/Arm-Examples/cmsis-mlek-examples) | Alif Ensemble E7 |  Pre-configured machine learning (ML) projects using the ML Embedded Evaluation Kit. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4">). |
+| [SDS-Examples](https://github.com/Arm-Examples/SDS-Examples) | Various | Examples showing the usage of the Synchronous Data Streaming (SDS) Framework. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250916_SDS_Webinar.mp4). |
+| [CMSIS-Executorch](https://github.com/Arm-Examples/CMSIS-Executorch) | Ethos-U | Project template for embedded applications with Arm Ethos-U that use ExecuTorch AI models |
 
-| Repository | Hardware used | Tool/IDE | Notes |
-|------------|---------------|----------|-------|
-| [mlek-cmsis-pack-examples](https://github.com/Arm-Examples/mlek-cmsis-pack-examples) | Various | CMSIS-Toolbox, Keil Studio |  Machine Learning (ML) examples using the ML Embedded Evaluation Kit. |
+## Functional Safety (FuSa RTS)
 
-## AVH-FVP examples
+[<img src="SafetyVideo.png" alt="Software development for safety critical applications" width="318" height="181" align="left">](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250930_FuSa_TRAVEO.mp4?#t=01:35 "Software development for safety critical applications")
 
-| Repository | Hardware used | Tool/IDE | Notes |
-|------------|---------------|----------|-------|
-| [AVH_CI_Template](https://github.com/Arm-Examples/AVH_CI_Template) | AVH (FVP_MPS2_Cortex-M3) | CMSIS-Toolbox, AVH | CI Template for unit test automation |
-| [AVH-Virtual-Peripherals](https://github.com/Arm-Examples/AVH-Virtual-Peripherals) | AVH (FVP_MPS2_Cortex-M0) | AVH (locally) | Example of AVH models and their python extension implementing virtual peripherals. |
-| [AVH-VSI](https://github.com/Arm-Examples/AVH-VSI) | Arm Corstone-310 | CMSIS-Toolbox, AVH | Simple Hello World example using VSI interfaces. |
-| [AVH-Hello](https://github.com/Arm-Examples/AVH-Hello) | Multiple AVH FVPs | CMSIS-Toolbox, AVH | CI project with a test matrix that uses GitHub Actions on a GitHub-hosted runner. |
-| [AWS_MQTT_Demo](https://github.com/Arm-Examples/AWS_MQTT_Demo) | Arm Corstone-300 | CMSIS-Toolbox, AVH | CI project that connects to AWS MQTT broker; can be retarget to physical boards using layers. |
+The [MDK Professional Edition](https://www.keil.arm.com/keil-mdk/#mdk-v6-editions) includes safety features that help developers achieve compliance with standards like ISO 26262 (Automotive), IEC 61508 (Industrial), and IEC 62304 (Medical). It includes the [Arm Compiler for Embedded FuSa](https://developer.arm.com/Tools%20and%20Software/Arm%20Compiler%20for%20Embedded%20FuSa) and the [Arm FuSa Run-Time System](https://developer.arm.com/Tools%20and%20Software/Keil%20MDK/FuSa%20Run-Time%20System).
 
-## Other examples
+**[Watch this video](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250930_FuSa_TRAVEO.mp4?#t=01:35 "Software development for safety critical applications")**, explore the projects below or read the section [**Functional Safety**](FuSa.md) to learn more.
 
-| Repository | Hardware used | Tool/IDE | Notes |
-|------------|---------------|----------|-------|
-| [CMSIS-Stream-PoC](https://github.com/Arm-Examples/CMSIS-Stream-PoC) | NXP LPC1700 | µVision | Example project showing the usage of the CMSIS-Stream software component. |
-| [keil-studio-get-started](https://github.com/Arm-Examples/keil-studio-get-started) | AVH (FVP_MPS2_Cortex-M3) | CMSIS-Toolbox, Keil Studio (VS Code Extensions) | Get started example for use in Keil Studio. |
-| [MDK-MW-PoC](https://github.com/Arm-Examples/MDK-MW-PoC) |STMicroelectronics STM32F429I-Discovery | CMSIS-Toolbox, Keil Studio | MDK-Middleware application using the csloution project format. |
-| [Using CMSIS-View and CMSIS-Compiler](https://github.com/Arm-Examples/CMSIS-View_and_CMSIS-Compiler) |Various | µVision | Example projects from the CMSIS v6 webinar about CMSIS-View and CMSIS-Compiler. |
-| [AVH FVPs on MacOS](https://github.com/Arm-Examples/fvps-on-mac) | Mac | All | This repo contains a set of scripts that allow you to run AVH FVPs on MacOS using Docker. |
+<br clear="left"/>
+
+<br/>
+
+| Example | Hardware |  Content |
+|:--------|:---------|:---------|
+| [Safety-Example-Infineon-T2G](https://github.com/Arm-Examples/Safety-Example-Infineon-T2G) | Infineon Traveo T2G (Cortex-M7)| [Fusa RTS](https://developer.arm.com/Tools%20and%20Software/Keil%20MDK/FuSa%20Run-Time%20System) traffic light example, CMSIS-Driver development and verification. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250930_FuSa_TRAVEO.mp4). |
+| [Safety-Example-STM32](https://github.com/Arm-Examples/Safety-Example-STM32) | STM32H5 (Cortex-M33) | [Fusa RTS](https://developer.arm.com/Tools%20and%20Software/Keil%20MDK/FuSa%20Run-Time%20System) traffic light example. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250930_FuSa_TRAVEO.mp4). |
+
+## CI/CD Automation (GitHub Actions)
+
+Most of the above example projects include GitHub actions that run a build or execution test. The following projects help to get started with test automation.
+
+| Example | Hardware | Content  |
+|:--------|:---------|:---------|
+| [AVH_CI_Template](https://github.com/Arm-Examples/AVH_CI_Template) | FVP_MPS2_Cortex-M3 | CI Template for unit test automation |
+| [AVH-Hello](https://github.com/Arm-Examples/AVH-Hello) | Multiple FVP simulation models | CI project with a test matrix that uses GitHub Actions on a GitHub-hosted runner. |
+
+## Related
+
+<!-- todo - Software Packs maintained by Arm -->
+- [Other Examples](ListExamples.md)
