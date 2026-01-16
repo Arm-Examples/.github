@@ -2,7 +2,7 @@
 
 Arm-Examples contains ready-to-run embedded projects showcasing RTOS, machine learning, functional safety, and CI/CD automation across diverse Arm-based hardware platforms. 
 
-<a href="https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250715_Introduction_to_Keil_Studio.mp4" target="_blank"><img src="IntroVideo.png" alt="Introduction to Keil Studio" width="318" height="185" align="left"></a>
+<a href="https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250715_Introduction_to_Keil_Studio.mp4" target="_blank" rel="noopener noreferer"><img src="IntroVideo.png" alt="Introduction to Keil Studio" width="318" height="185" align="left"></a>
 
 These examples leverage Keil Studio, CMSIS-Toolbox, and Arm FVP models with various compilers (Arm Compiler 6, GCC, LLVM) enabling both desktop and cloud-based CI/CD workflows with physical hardware and simulation models.
 
