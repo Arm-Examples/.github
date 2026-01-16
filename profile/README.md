@@ -28,6 +28,8 @@ Comprehensive machine learning capabilities are available with ML Evaluation Kit
 
 <br clear="left"/>
 
+<br/>
+
 | Repository | Hardware | Content |
 |------------|----------|---------|
 | [CMSIS-MLEK-Examples](https://github.com/Arm-Examples/cmsis-mlek-examples) | Alif Ensemble E7 |  Pre-configured machine learning (ML) projects using the ML Embedded Evaluation Kit. <a href="https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4" target="_blank">Watch the related webinar</a>. |
