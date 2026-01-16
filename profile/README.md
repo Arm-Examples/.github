@@ -6,13 +6,13 @@ Arm-Examples contains ready-to-run embedded projects showcasing RTOS, machine le
 
 These examples leverage Keil Studio, CMSIS-Toolbox, and Arm FVP models with various compilers (Arm Compiler 6, GCC, LLVM) enabling both desktop and cloud-based CI/CD workflows with physical hardware and simulation models.
 
-Keil Studio is Arm's new IDE for embedded development directly in Visual Studio Code and the successor to the µVision IDE. **[Watch this video to learn more...](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250715_Introduction_to_Keil_Studio.mp4)**
+Keil Studio is Arm's new IDE for embedded development directly in Visual Studio Code and the successor to the µVision IDE. **[Watch this video to learn more...](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250715_Introduction_to_Keil_Studio.mp4 "Introduction to Keil Studio")**
 
 <br clear="left"/>
 
 ## RTOS Applications
 
-Keil Studio is designed for all types of embedded projects, ranging from bare-metal firmware to complex RTOS-based systems. How to choose the right option: bare-metal, Keil RTX, FreeRTOS, and Zephyr? [**Learn more ...**](BareMetal2RTOS.md)
+Keil Studio is designed for all types of embedded projects, ranging from bare-metal firmware to complex RTOS-based systems. How to choose the right option: bare-metal, Keil RTX, FreeRTOS, and Zephyr? [**Learn more ...**](BareMetal2RTOS.md "Bare-Metal or RTOS")
 
 | Repository | Hardware | Content |
 |------------|----------|---------|
@@ -22,7 +22,7 @@ Keil Studio is designed for all types of embedded projects, ranging from bare-me
 
 ## Edge AI and Machine Learning
 
-<a href="https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4?#t=07:22" target="_blank"><img src="ML_Video.png" alt="Development flow for optimized Edge AI devices" width="318" height="170" align="left"></a>
+[<img src="ML_Video.png" alt="Development flow for optimized Edge AI devices" width="318" height="170" align="left">](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4?#t=07:22 "Development flow for optimized Edge AI devices")
 
 Comprehensive machine learning capabilities are available with ML Evaluation Kit (MLEK), Synchronous Data Streaming (SDS) Framework, LiteRT (TensorFlow), and Executourch that utilizes CMSIS-NN (for Cortex-M) or Vela (for Ethos-U). **[Watch this video to learn more...](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4?#t=07:22 "Development flow for optimized Edge AI devices")**
 
@@ -38,7 +38,7 @@ Comprehensive machine learning capabilities are available with ML Evaluation Kit
 
 ## Functional Safety (FuSa RTS)
 
-<a href="https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250930_FuSa_TRAVEO.mp4?#t=01:35" target="_blank"><img src="SafetyVideo.png" alt="Software development for safety critical applications" width="318" height="181" align="left"></a>
+[<img src="SafetyVideo.png" alt="Software development for safety critical applications" width="318" height="181" align="left">](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250930_FuSa_TRAVEO.mp4?#t=01:35 "Software development for safety critical applications")
 
 The [MDK Professional Edition](https://www.keil.arm.com/keil-mdk/#mdk-v6-editions) includes safety features that help developers achieve compliance with standards like ISO 26262 (Automotive), IEC 61508 (Industrial), and IEC 62304 (Medical). It includes the [Arm Compiler for Embedded FuSa](https://developer.arm.com/Tools%20and%20Software/Arm%20Compiler%20for%20Embedded%20FuSa) and the [Arm FuSa Run-Time System](https://developer.arm.com/Tools%20and%20Software/Keil%20MDK/FuSa%20Run-Time%20System).
 
