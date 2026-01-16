@@ -2,11 +2,11 @@
 
 Arm-Examples contains ready-to-run embedded projects showcasing RTOS, machine learning, functional safety, and CI/CD automation across diverse Arm-based hardware platforms. 
 
-[<img src="IntroVideo.png" alt="Introduction to Keil Studio" width="318" height="185" align="left">]((https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250715_Introduction_to_Keil_Studio.mp4 "Introduction to Keil Studio")
+[<img src="IntroVideo.png" alt="Introduction to Keil Studio" width="318" height="185" align="left">](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250715_Introduction_to_Keil_Studio.mp4 "Introduction to Keil Studio")
 
 These examples leverage Keil Studio, CMSIS-Toolbox, and Arm FVP models with various compilers (Arm Compiler 6, GCC, LLVM) enabling both desktop and cloud-based CI/CD workflows with physical hardware and simulation models.
 
-Keil Studio is Arm's new IDE for embedded development directly in Visual Studio Code and the successor to the µVision IDE. **![Watch this video to learn more...](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250715_Introduction_to_Keil_Studio.mp4 "Introduction to Keil Studio")**
+Keil Studio is Arm's new IDE for embedded development directly in Visual Studio Code and the successor to the µVision IDE. **[Watch this video to learn more...](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250715_Introduction_to_Keil_Studio.mp4)**
 
 <br clear="left"/>
 
