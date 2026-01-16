@@ -2,14 +2,13 @@
 
 Arm-Examples contains ready-to-run embedded projects showcasing RTOS, machine learning, functional safety, and CI/CD automation across diverse Arm-based hardware platforms. 
 
-<table style="border: none; margin-left: 0; padding-left: 0;">
-<tr>
-<td style="border: none; padding-left: 0; width: 325px;"><a href="https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250715_Introduction_to_Keil_Studio.mp4" target="_blank"><img src="IntroVideo.png" alt="Introduction Video" style="width: 318px; height: 185px;"></a></td>
-<td style="border: none; "><p>These examples leverage Keil Studio, CMSIS-Toolbox, and Arm FVP models with various compilers (Arm Compiler 6, GCC, LLVM) enabling both desktop and cloud-based CI/CD workflows with physical hardware and simulation models.</p>
+<a href="https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250715_Introduction_to_Keil_Studio.mp4" target="_blank"><img src="IntroVideo.png" alt="Introduction Video" width="318" height="185" align="left"></a>
 
-<p>Keil Studio is Arm's new IDE for embedded development directly in Visual Studio Code and the successor to the µVision IDE. <b><a href="https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250715_Introduction_to_Keil_Studio.mp4" target="_blank">Watch this video to learn more...</a></b></p></td>
-</tr>
-</table>
+These examples leverage Keil Studio, CMSIS-Toolbox, and Arm FVP models with various compilers (Arm Compiler 6, GCC, LLVM) enabling both desktop and cloud-based CI/CD workflows with physical hardware and simulation models.
+
+Keil Studio is Arm's new IDE for embedded development directly in Visual Studio Code and the successor to the µVision IDE. **<a href="https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250715_Introduction_to_Keil_Studio.mp4" target="_blank">Watch this video to learn more...</a>**
+
+<br clear="left"/>
 
 ## RTOS Applications
 
@@ -23,12 +22,11 @@ Keil Studio is designed for all types of embedded projects, ranging from bare-me
 
 ## Edge AI and Machine Learning
 
-<table style="border: none; margin-left: 0; padding-left: 0;">
-<tr>
-<td style="border: none; padding-left: 0; width: 325px;"><a href="https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4?#t=07:22" target="_blank"><img src="ML_Video.png" alt="ML Video" style="width: 318px; height: 170px;"></a></td>
-<td style="border: none; ">Comprehensive machine learning capabilities are available with ML Evaluation Kit (MLEK), Synchronous Data Streaming (SDS) Framework, LiteRT (TensorFlow), and Executourch that utilizes CMSIS-NN (for Cortex-M) or Vela (for Ethos-U). <b><a href="https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4?#t=07:22" target="_blank">Watch this video to learn more...</a></b></td>
-</tr>
-</table>
+<a href="https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4?#t=07:22" target="_blank"><img src="ML_Video.png" alt="ML Video" width="318" height="170" align="left"></a>
+
+Comprehensive machine learning capabilities are available with ML Evaluation Kit (MLEK), Synchronous Data Streaming (SDS) Framework, LiteRT (TensorFlow), and Executourch that utilizes CMSIS-NN (for Cortex-M) or Vela (for Ethos-U). **<a href="https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4?#t=07:22" target="_blank">Watch this video to learn more...</a>**
+
+<br clear="left"/>
 
 | Repository | Hardware | Content |
 |------------|----------|---------|
