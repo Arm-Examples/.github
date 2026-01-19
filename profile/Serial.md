@@ -32,7 +32,8 @@ The implementation of UART communication can be tricky with an RTOS system that 
 
 ### RTT (Real-Time Transfer)
 
-RTT is a memory-based debug communication mechanism developed by SEGGER. The application code implements I/O retargeting to RAM ring buffers on the target, and the debugger reads those buffers, without halting the CPU. The debugger periodically reads the RAM ring buffers via the SWD/JTAG interface. See [SEGGER RTT documentation](https://www.segger.com/products/debug-probes/j-link/technology/about-real-time-transfer/) for more information.
+RTT is a memory-based debug communication mechanism developed by SEGGER. The application code implements I/O retargeting to RAM ring buffers on the target, and the debugger reads those buffers periodically via the SWD/JTAG interface, without halting the CPU. See [SEGGER RTT documentation](https://www.segger.com/products/debug-probes/j-link/technology/about-real-time-transfer/) for more information.
+
 
 RTT requires a simple module that is linked into the firmware and is easy to use. No extra pins are required and it is easy to implement in a hardware platform. The communication speed depends on the debugger and the debug clock setup, but is typically faster than UART communication.
 
