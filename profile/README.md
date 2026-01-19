@@ -12,11 +12,11 @@ Keil Studio is Arm's new IDE for embedded development directly in Visual Studio 
 
 ## RTOS Applications
 
-Keil Studio is designed for all types of embedded projects, ranging from bare-metal firmware to complex RTOS-based systems. How to choose the right option: bare-metal, Keil RTX, FreeRTOS, and Zephyr? [**Learn more ...**](BareMetal2RTOS.md "Bare-Metal or RTOS")
+Keil Studio is designed for all types of embedded projects, ranging from bare-metal firmware to complex RTOS-based systems. [**Learn how to choose the right option:**](BareMetal2RTOS.md "Bare-Metal or RTOS") bare-metal, Keil RTX, FreeRTOS, and Zephyr?
 
 | Example | Hardware | Content |
 |:--------|:---------|:--------|
-| [Hello_World](https://github.com/Arm-Examples/Hello_NUCLEO-G474RE) | ST NUCLEO-G474RE | Setup of Keil RTX configuration with I/O retargeting on STM32 targets; prints "Hello World, 0..9" on serial console. |
+| [Hello_World](https://github.com/Arm-Examples/Hello_NUCLEO-G474RE) | Various | Setup of [bare-metal or RTOS](BareMetal2RTOS.md "Bare-Metal or RTOS") configuration with [serial I/O retargeting](Serial.md "Serial I/O Messages"); prints "Hello World .." on serial console. |
 | [Middleware_USB_FS](https://github.com/Arm-Examples/Middleware_USB_FS) |  STM32F7 | MDK-Middleware with USB Device and File System for evaluation kit and custom hardware. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250729_Working_with_STM32_devices.mp4). |
 | [CMSIS-Zephyr](https://github.com/Arm-Examples/SDS-Examples) | Various | Zephyr application examples with Keil Studio showcases multi-target and debug setup. |
 
