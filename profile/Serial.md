@@ -25,7 +25,8 @@ Semihosting requires no hardware configuration and is easy to use for quick debu
 
 UART is the traditional hardware serial interface. Data is transmitted via dedicated TX/RX pins typically to a serial adapter (USB-to-UART). The application code implements I/O retargeting to an UART peripheral.
 
-The communication requires an UART peripheral with TX (and optionally RX) pins. As the communication requires no debugger capabilities, but just a simple terminal program, UART communication can be widely used during application development up to message logging in production hardware. It requires pins, clock setup, and hardware and the bandwidth is limited by the baudrate (typical 115200bps).
+The communication requires an UART peripheral with TX (and optionally RX) pins. As it does not require debugger capabilities, but just a simple terminal program, UART communication can be widely used during application development up to message logging in production hardware. It requires pins, clock setup, and hardware and the bandwidth is limited by the baudrate (typical 115200bps).
+
 
 The implementation of UART communication can be tricky with an RTOS system that runs multiple threads and a blocking printf routine can affect real-time behavior of the software.
 
