@@ -12,7 +12,8 @@ The Arm CMSIS Debugger extension supports (with pyOCD and Segger J-Link server) 
 
 ### Semihosting
 
-Semihosting is a debugger-assisted I/O mechanism defined by Arm. The Cortex-M processor executes a special instruction (usually BKPT), which the debugger intercepts. The debugger then performs I/O operations on behalf of the target, such as printing text to the IDE console. For details, see [Arm Semihosting documentation](https://github.com/ARM-software/abi-aa/blob/main/semihosting/semihosting.rst).
+Semihosting is a debugger-assisted I/O mechanism defined by Arm. The Cortex-M processor executes a special instruction (usually BKPT), which the debugger intercepts. The debugger then performs I/O operations on behalf of the target, such as printing text to the IDE console. For details, see [Arm Semihosting documentation](https://github.com/ARM-software/abi-aa/blob/main/semihosting/semihosting.rst#introduction).
+
 
 With semihosting, the application calls an C library I/O function (e.g. _write, printf). Inside this library function, the CPU executes a breakpoint (BKPT) instruction. The Debugger halts the CPU, reads the memory that contains the message, the CPU resumes execution, and outputs this message to a TCP port (for display) or file (for logging).
 
