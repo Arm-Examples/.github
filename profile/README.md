@@ -12,7 +12,7 @@ Keil Studio is Arm's new IDE for embedded development directly in Visual Studio 
 
 ## RTOS Applications
 
-Keil Studio is designed for all types of embedded projects, ranging from bare-metal firmware to complex RTOS-based systems. [**Learn how to choose the right option:**](BareMetal2RTOS.md "Bare-Metal or RTOS") bare-metal, Keil RTX, FreeRTOS, and Zephyr?
+Keil Studio is designed for all types of embedded projects, ranging from bare-metal firmware to complex RTOS-based systems. [**Learn how to choose the right option:**](BareMetal2RTOS.md "Bare-Metal or RTOS") bare-metal, Keil RTX, FreeRTOS, or Zephyr?
 
 | Example | Hardware | Content |
 |:--------|:---------|:--------|
