@@ -18,7 +18,8 @@ Semihosting is a debugger-assisted I/O mechanism defined by Arm. The Cortex-M pr
 With semihosting, the application calls a C library I/O function (e.g. _write, printf). Inside this library function, the CPU executes a breakpoint (BKPT) instruction. The Debugger halts the CPU, reads the memory that contains the message, the CPU resumes execution, and outputs this message to a TCP port (for display) or file (for logging).
 
 
-Semihosting requires no hardware configuration and is easy to use for quick debugging. No extra pins are required and it is typically used in early in startup (even before clocks are set) of a hardware platform.  Due to the communication via a breakpoint, the communication is slow and cannot be used in production systems.
+Semihosting requires no hardware configuration and is easy to use for quick debugging. No extra pins are required and it is typically used in early in startup (even before clocks are set) of a hardware platform.  Due to the communication via a breakpoint, the communication is slow and intrusive (program execution is stopped). It is not recommended for use in production systems.
+
 
 ### UART (Serial Port)
 
