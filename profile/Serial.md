@@ -5,7 +5,8 @@
 On microcontrollers, serial I/O messages (printf-style output) can be sent to a host PC in several ways. The most widely used are semihosting, UART, and RTT. Each method has different trade-offs in terms of speed, intrusiveness, hardware requirements, and suitability for production code.
 
 
-The CMSIS-Debugger supports with pyOCD and Segger J-Link server Semihosting and RTT. For UART communication, a terminal program is used and no special debugger support is required. With Keil Studio, the Serial Monitor can be used to connect to all types of serial I/O messages. For more information, see [CMSIS-View documentation](https://arm-software.github.io/CMSIS-View/latest/index.html).
+The Arm CMSIS Debugger extension supports (with pyOCD and Segger J-Link server) semihosting and RTT. For UART communication, a terminal program is used and no special debugger support is required. With Keil Studio, the Serial Monitor can be used to connect to all types of serial I/O messages. For more information, see [CMSIS-View documentation](https://arm-software.github.io/CMSIS-View/latest/index.html).
+
 
 ## Technology Overview
 
