@@ -18,7 +18,7 @@ Keil Studio is designed for all types of embedded projects, ranging from bare-me
 |:--------|:---------|:--------|
 | [Hello_World](https://github.com/Arm-Examples/Hello_NUCLEO-G474RE) | Various | Setup of [bare-metal or RTOS](BareMetal2RTOS.md "Bare-Metal or RTOS") configuration with [serial I/O retargeting](Serial.md "Serial I/O Messages"); prints "Hello World .." on serial console. |
 | [Middleware_USB_FS](https://github.com/Arm-Examples/Middleware_USB_FS) |  STM32F7 | MDK-Middleware with USB Device and File System for evaluation kits and custom hardware. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250729_Working_with_STM32_devices.mp4). |
-| [CMSIS-Zephyr](https://github.com/Arm-Examples/SDS-Examples) | Various | Zephyr application examples with Keil Studio demonstrate multi-target and debug setup. |
+| [CMSIS-Zephyr](https://github.com/Arm-Examples/CMSIS-Zephyr) | Various | Zephyr application examples with Keil Studio demonstrate multi-target and debug setup. |
 
 ## Edge AI and Machine Learning
 
