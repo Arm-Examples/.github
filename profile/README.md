@@ -16,8 +16,8 @@ Keil Studio is designed for all types of embedded projects, ranging from bare-me
 
 | Example | Hardware | Content |
 |:--------|:---------|:--------|
-| [Hello_World](https://github.com/Arm-Examples/Hello_NUCLEO-G474RE) | Various | Setup of [bare-metal or RTOS](BareMetal2RTOS.md "Bare-Metal or RTOS") configuration with [serial I/O retargeting](Serial.md "Serial I/O Messages"); prints "Hello World .." on serial console. |
-| [Middleware_USB_FS](https://github.com/Arm-Examples/Middleware_USB_FS) |  STM32F7 | MDK-Middleware with USB Device and File System for evaluation kits and custom hardware. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250729_Working_with_STM32_devices.mp4). |
+| [Hello_World](https://github.com/Arm-Examples/Hello_World) | Various | Setup of [bare-metal or RTOS](BareMetal2RTOS.md "Bare-Metal or RTOS") configuration with [serial I/O retargeting](Serial.md "Serial I/O Messages"); prints "Hello World ..". |
+| [Middleware_USB_FS](https://github.com/Arm-Examples/Middleware_USB_FS) |  STM32F7 | MDK-Middleware with USB Device and File System for evaluation kits or custom hardware. Retargeting to a different board only requires a layer with compatible APIs. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250729_Working_with_STM32_devices.mp4). |
 | [CMSIS-Zephyr](https://github.com/Arm-Examples/CMSIS-Zephyr) | Various | Zephyr application examples with Keil Studio demonstrate multi-target and debug setup. |
 
 ## Edge AI and Machine Learning
@@ -62,3 +62,4 @@ Most of the above example projects include GitHub actions that run a build or ex
 
 <!-- todo - Software Packs maintained by Arm -->
 - [Other Examples](ListExamples.md)
+- [Keil Studio Documentation](https://mdk-packs.github.io/vscode-cmsis-solution-docs/)
