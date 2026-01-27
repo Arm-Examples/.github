@@ -63,31 +63,31 @@ CI pipelines may store build artifact files, reports, and may further automate f
 
 Raspberry Pi devices can serve as cost-effective self-hosted GitHub runners for HIL testing with embedded hardware. The setup involves installing Ubuntu Server, configuring the development toolchain, and registering the device as a GitHub Actions runner.
 
-**Prerequisites:**
+### Prerequisites
 
-- Raspberry Pi 3 or newer (with setup for Arm64 architecture).
-- microSD card (minimum 8GB).
+- Raspberry Pi 3 or newer (Arm64 architecture).
+- microSD card (minimum 8 GB).
 - Network connection (LAN or Wi-Fi).
 - Debug probe (e.g. ULINKplus or ST-LINK) for target hardware connection.
 
-**Setup Steps:**
+### Setup Steps
 
-1. **Image the microSD Card**: Use [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to install Ubuntu Server 24.04 LTS (64-bit). Configure hostname (e.g., `rpi-ci`), user credentials, SSH access, and network settings during the imaging process. See [Ubuntu installation guide for Raspberry Pi](https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi).
+The setup requires four steps:
 
-2. **Initial System Setup**: Boot the Raspberry Pi and apply system updates using `apt update` and `apt upgrade`.
+1. [Create an image for the Raspberry Pi](#image-the-microsd-card)
+2. [Configure your network access](#network-configuration-and-access)
+3. [Install the development tools](#install-development-tools)
+4. [Setup your gitHub runner](#setup-github-runner)
 
-3. **Network Configuration and Access**: Configure network access and establish SSH connection for remote management.
+#### Image the microSD Card
 
-4. **Install Development Tools**:
-   - [CMSIS-Toolbox](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/releases) for building embedded projects
-   - [pyOCD](https://github.com/pyocd/pyOCD/releases) for debug probe support
-   - Required packs (e.g., `Keil::STM32H5xx_DFP`) using `cpackget`
-   - Configure environment variables (`CMSIS_TOOLBOX_ROOT`, `CMSIS_PACK_ROOT`) in `.bashrc`
-   - Configure USB access with the [udev rules for pyOCD](https://github.com/pyocd/pyOCD/tree/main/udev) to enable non-root access to debug probes. Add user to `plugdev` group.
+- Use [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to install Ubuntu Server 24.04 LTS (64-bit).
+- Configure hostname (e.g., `rpi-ci`), user credentials, SSH access, and network settings during the imaging process.
+  See [Ubuntu installation guide for Raspberry Pi](https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi).
 
-5. **Setup GitHub Runner**: Follow [GitHub's self-hosted runner setup](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/adding-self-hosted-runners) for Linux ARM64. Download the runner package, configure it with your repository URL and token, then start the runner service with `./run.sh`.
+#### Network Configuration and Access
 
-### Step 3: Configure Network and SSH Access
+Configure network access and establish SSH connection for remote management.
 
 ```bash
 # Determine the Raspberry Pi's MAC address (useful for network registration)
@@ -97,7 +97,8 @@ ip link show eth0 | grep ether
 ip addr show eth0 | grep inet
 ```
 
-If your organization requires device registration (e.g., MAC address whitelisting), register the Raspberry Pi's MAC address with your network administrator before proceeding.
+If your organization requires device registration (e.g., MAC address whitelisting), register the Raspberry Pi's MAC
+address with your network administrator before proceeding.
 
 **Connect via SSH from your PC:**
 
@@ -109,13 +110,27 @@ ssh <username>@<ip-address>
 # ssh devuser@192.168.1.100
 ```
 
-### Step 4: Install Development Tools and DFP on Raspberry Pi
+#### Install Development Tools
 
-Copy and paste the following commands to setup CMSIS-Toolbox, pyOCD, and required packs. Adapt the versions and DFP pack as required for your application.
+You'll need the following tools:
+
+- [CMSIS-Toolbox](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/releases) for building embedded projects
+- [pyOCD](https://github.com/pyocd/pyOCD/releases) for debug probe support
+- Required packs (e.g., `Keil::STM32H5xx_DFP`) using `cpackget`
+
+Also, you need to configure the following:
+
+- Configure environment variables (`CMSIS_TOOLBOX_ROOT`, `CMSIS_PACK_ROOT`) in `.bashrc`
+- Configure USB access with the [udev rules for pyOCD](https://github.com/pyocd/pyOCD/tree/main/udev) to enable
+  non-root access to debug probes. Add user to `plugdev` group.
+
+Copy and paste the following commands to setup CMSIS-Toolbox, pyOCD, and required packs. Adapt the versions and DFP
+pack as required for your application.
 
 ```bash
 # Install build tools
 sudo apt update
+sudo apt upgrade
 sudo apt install cmake ninja-build unzip -y
 
 # Download and extract CMSIS-Toolbox
@@ -152,7 +167,11 @@ cpackget init https://www.keil.com/pack/index.pidx
 cpackget add Keil::STM32H5xx_DFP@2.1.1 -a
 ```
 
-### Step 5: Setup GitHub Runner
+#### Setup GitHub Runner
+
+Follow [GitHub's self-hosted runner setup](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/adding-self-hosted-runners)
+for Linux Arm64. Download the runner package, configure it with your repository URL and token, then start the runner
+service with `./run.sh`.
 
 **To add a self-hosted runner:**
 
@@ -183,4 +202,5 @@ tar xzf ./actions-runner-linux-arm64-2.331.0.tar.gz
 ./run.sh
 ```
 
-Once started, the runner will listen for jobs. When you trigger a workflow in your repository that uses `runs-on: self-hosted`, the Raspberry Pi will execute the job.
+Once started, the runner will listen for jobs. When you trigger a workflow in your repository that uses
+`runs-on: self-hosted`, the Raspberry Pi will execute the job.
