@@ -51,7 +51,7 @@ The [MDK Professional Edition](https://www.keil.arm.com/keil-mdk/#mdk-v6-edition
 
 ## CI/CD Automation (GitHub Actions)
 
-Most of the above example projects include GitHub actions that run a build or execution test. The following projects help to get started with test automation.
+Most of the above example projects include GitHub actions that run automated CI tests. The following projects help to get started with test automation. Read the section **[CI/CD](cicd.md)** to learn more.
 
 | Example | Hardware | Content  |
 |:--------|:---------|:---------|
