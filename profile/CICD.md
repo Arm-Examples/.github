@@ -4,15 +4,15 @@
 
 Modern embedded software development requires automated workflows that ensure code quality, enable rapid iteration, and support collaborative development. CI/CD practices bring these capabilities to embedded systems, helping teams deliver reliable firmware faster while maintaining high quality standards.
 
-[MDK](https://www.keil.arm.com/keil-mdk/) includes tools to establish comprehensive CI/CD workflows that include [automated builds](#automated-build-test) as well as unit testing and integration testing on [simulation models](#arm-fixed-virtual-platforms-fvp) or [hardware](#hil-testing-with-pyocd). [Keil Studio](https://marketplace.visualstudio.com/items?itemName=Arm.keil-studio-pack/) is based on VS Code that integrates Git features and offers several VS Code extensions for static analysis. The [CMSIS-Toolbox](https://open-cmsis-pack.github.io/cmsis-toolbox/) is a command-line interface for building embedded applications, enabling seamless integration with popular CI/CD platforms (like GitHub Actions). Integration with static analysis tools (MISRA checking, code coverage analysis) is achieved with standard database files that third-party tools can consume for comprehensive code analysis.
+[MDK](https://www.keil.arm.com/keil-mdk/) includes tools to establish comprehensive CI/CD workflows that include [automated builds](#automated-build-test) as well as unit testing and integration testing on [simulation models](#arm-fixed-virtual-platforms-fvp) or [target hardware](#hil-testing-with-pyocd). [Keil Studio](https://marketplace.visualstudio.com/items?itemName=Arm.keil-studio-pack/) is based on VS Code that integrates Git features and offers several VS Code extensions for static code analysis. The [CMSIS-Toolbox](https://open-cmsis-pack.github.io/cmsis-toolbox/) is a command-line interface for building embedded applications, enabling seamless integration with popular CI/CD platforms (like GitHub Actions). Integration with static code analysis tools (MISRA checking, code coverage analysis) is achieved with standard database files that third-party tools can consume.
 
 ![CI/CD Process Overview](CICD_Overview.png "CI/CD Process Overview")
 
 ## CI/CD Capabilities for Embedded Development
 
-The underlying build system of [Keil Studio](https://www.keil.arm.com/) uses the [CMSIS-Toolbox](https://open-cmsis-pack.github.io/cmsis-toolbox/) and CMake. [GitHub-hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners) provide virtual machines for automated build and execution tests using simulation models, while [self-hosted runners](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners) enable testing on actual hardware. [CI](https://en.wikipedia.org/wiki/Continuous_integration) is effectively supported with:
+The underlying build system of [Keil Studio](https://www.keil.arm.com/) uses the [CMSIS-Toolbox](https://open-cmsis-pack.github.io/cmsis-toolbox/) and CMake. [GitHub-hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners) provide virtual machines for automated build and execution tests using simulation models, while [self-hosted runners](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners) enable testing on actual target hardware. [CI](https://en.wikipedia.org/wiki/Continuous_integration) is streamlined with:
 
-- Consistent tool installation based on a single [`vcpkg-configuration.json`](./vcpkg-configuration.json) file for desktop and CI environments.
+- Consistent tool installation based on a single [`vcpkg-configuration.json`](https://github.com/Arm-Examples/Hello_World/blob/main/vcpkg-configuration.json) file for desktop and CI environments.
 - CMSIS solution files (`*.csolution.yml`) that enable seamless builds in CI, for example using GitHub actions.
 - [Run and Debug Configuration](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#run-and-debug-configuration) for pyOCD that uses a single configuration file `*.cbuild-run.yml`. 
 
@@ -37,7 +37,7 @@ Effective embedded development incorporates various testing strategies:
 - **Arm Fixed Virtual Platforms (FVP)** are simulation models to test without physical devices, accelerating feedback cycles.
 - **Hardware-in-the-Loop (HIL) Testing** with debug adapters to execute tests on actual target hardware to verify real-world behavior.
 
-CI pipelines artifact files, reports, and can further automate firmware packaging, versioning, and deployment processes, ensuring traceability from source code to deployed binaries.
+CI pipelines may store build artifact files, reports, and may further automate firmware packaging, versioning, and deployment processes, ensuring traceability from source code to deployed binaries.
 
 ## Arm Fixed Virtual Platforms (FVP)
 
@@ -50,7 +50,7 @@ CI pipelines artifact files, reports, and can further automate firmware packagin
 
 ## HIL Testing with pyOCD
 
-[Hardware-in-the-Loop (HIL)](https://en.wikipedia.org/wiki/Hardware-in-the-loop_simulation) testing is enabled with [self-hosted GitHub runners](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners) that connect Linux systems equipped with debug probes. Build artifacts (firmware images) are generated through automated build tests on GitHub-hosted runners, then deployed to self-hosted runners where pyOCD downloads the firmware to target hardware and executes the test suite.
+[Hardware-in-the-Loop (HIL)](https://en.wikipedia.org/wiki/Hardware-in-the-loop_simulation) testing is enabled with [self-hosted GitHub runners](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners) that connect to Linux systems equipped with debug probes. Build artifacts (firmware images) are generated through automated build tests on GitHub-hosted runners, then deployed to self-hosted runners where pyOCD downloads the firmware to target hardware and executes the test suite.
 
 ![HIL Integration](https://raw.githubusercontent.com/Arm-Examples/Safety-Example-Infineon-T2G/main/Doc/CI_HIL.png "HIL Integration")
 
@@ -64,7 +64,8 @@ CI pipelines artifact files, reports, and can further automate firmware packagin
 Raspberry Pi devices can serve as cost-effective self-hosted GitHub runners for HIL testing with embedded hardware. The setup involves installing Ubuntu Server, configuring the development toolchain, and registering the device as a GitHub Actions runner.
 
 **Prerequisites:**
-- Raspberry Pi 3 or newer (ARM64 architecture recommended).
+
+- Raspberry Pi 3 or newer (with setup for Arm64 architecture).
 - microSD card (minimum 8GB).
 - Network connection (LAN or Wi-Fi).
 - Debug probe (e.g. ULINKplus or ST-LINK) for target hardware connection.
