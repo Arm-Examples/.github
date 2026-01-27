@@ -74,18 +74,18 @@ Raspberry Pi devices can serve as cost-effective self-hosted GitHub runners for 
 
 The setup requires four steps:
 
-1. [Create an image for the Raspberry Pi](#image-the-microsd-card)
-2. [Configure your network access](#network-configuration-and-access)
-3. [Install the development tools](#install-development-tools)
-4. [Setup your gitHub runner](#setup-github-runner)
+1. [Create an image for the Raspberry Pi](#1-image-the-microsd-card)
+2. [Configure your network access](#2-network-configuration-and-access)
+3. [Install the development tools](#3-install-development-tools)
+4. [Setup your GitHub runner](#4-setup-github-runner)
 
-#### Image the microSD Card
+#### 1. Image the microSD Card
 
 - Use [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to install Ubuntu Server 24.04 LTS (64-bit).
 - Configure hostname (e.g., `rpi-ci`), user credentials, SSH access, and network settings during the imaging process.
   See [Ubuntu installation guide for Raspberry Pi](https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi).
 
-#### Network Configuration and Access
+#### 2. Network Configuration and Access
 
 Configure network access and establish SSH connection for remote management.
 
@@ -110,7 +110,7 @@ ssh <username>@<ip-address>
 # ssh devuser@192.168.1.100
 ```
 
-#### Install Development Tools
+#### 3. Install Development Tools
 
 You'll need the following tools:
 
@@ -167,7 +167,7 @@ cpackget init https://www.keil.com/pack/index.pidx
 cpackget add Keil::STM32H5xx_DFP@2.1.1 -a
 ```
 
-#### Setup GitHub Runner
+#### 4. Setup GitHub Runner
 
 Follow [GitHub's self-hosted runner setup](https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/adding-self-hosted-runners)
 for Linux Arm64. Download the runner package, configure it with your repository URL and token, then start the runner
