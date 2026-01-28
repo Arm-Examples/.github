@@ -1,4 +1,4 @@
-[**Arm Examples**](README.md) » **Bare-Metal or RTOS**
+[**Arm Examples**](https://github.com/Arm-Examples/) » **Bare-Metal or RTOS**
 
 # Bare-Metal or RTOS
 

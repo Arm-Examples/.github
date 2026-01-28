@@ -1,4 +1,4 @@
-[**Arm Examples**](README.md) » **Functional Safety**
+[**Arm Examples**](https://github.com/Arm-Examples/) » **Functional Safety**
 
 ## Functional Safety
 

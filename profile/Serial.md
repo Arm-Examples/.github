@@ -1,4 +1,4 @@
-[**Arm Examples**](README.md) » **Serial I/O Messages**
+[**Arm Examples**](https://github.com/Arm-Examples/) » **Serial I/O Messages**
 
 # Serial I/O Messages
 
