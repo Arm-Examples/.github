@@ -1,10 +1,10 @@
-[**Arm Examples**](README.md) » **CI/CD**
+[**Arm Examples**](https://github.com/Arm-Examples/) » **CI/CD**
 
 # CI/CD (Continuous Integration / Continuous Delivery)
 
 Modern embedded software development requires automated workflows that ensure code quality, enable rapid iteration, and support collaborative development. CI/CD practices bring these capabilities to embedded systems, helping teams deliver reliable firmware faster while maintaining high quality standards.
 
-[MDK](https://www.keil.arm.com/keil-mdk/) includes tools to establish comprehensive CI/CD workflows that include [automated builds](#automated-build-test) as well as unit testing and integration testing on [simulation models](#arm-fixed-virtual-platforms-fvp) or [target hardware](#hil-testing-with-pyocd). [Keil Studio](https://marketplace.visualstudio.com/items?itemName=Arm.keil-studio-pack/) is based on VS Code that integrates Git features and offers several VS Code extensions for static code analysis. The [CMSIS-Toolbox](https://open-cmsis-pack.github.io/cmsis-toolbox/) is a command-line interface for building embedded applications, enabling seamless integration with popular CI/CD platforms (like GitHub Actions). Integration with static code analysis tools (MISRA checking, code coverage analysis) is achieved with standard database files that third-party tools can consume.
+[MDK](https://www.keil.arm.com/keil-mdk/) includes tools to establish comprehensive CI/CD workflows that include [automated builds](#automated-build-test) as well as unit testing and integration testing on [simulation models](#arm-fixed-virtual-platforms-fvp) or [target hardware](#hil-testing-with-pyocd). [Keil Studio](https://marketplace.visualstudio.com/items?itemName=Arm.keil-studio-pack/) is based on VS Code that integrates Git features and offers several VS Code extensions for static code analysis. The [CMSIS-Toolbox](https://open-cmsis-pack.github.io/cmsis-toolbox/) is a command-line interface for building embedded applications, enabling seamless integration with popular CI/CD platforms (like GitHub Actions). Integration with static code analysis tools (e.g. MISRA checking) is achieved with standard database files that third-party tools can consume.
 
 ![CI/CD Process Overview](CICD_Overview.png "CI/CD Process Overview")
 
