@@ -1,0 +1,27 @@
+name: Check links with lychee
+
+on:
+  pull_request:
+    paths:
+      - "profile/**/*.md"
+  push:
+    paths:
+      - "profile/**/*.md"
+  schedule:
+    - cron: "0 20 * * 0" # Sundays 20:00 UTC
+  workflow_dispatch:
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write # Required for peter-evans/create-issue-from-file
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Check links in md files
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Only check markdown in the profile folder
+          args: --root-dir "$(pwd)" --verbose --no-progress --accept 200,206,429 --timeout 20 --max-retries 2 "profile/**/*.md"
