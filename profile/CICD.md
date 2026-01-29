@@ -4,7 +4,7 @@
 
 Modern embedded software development requires automated workflows that ensure code quality, enable rapid iteration, and support collaborative development. CI/CD practices bring these capabilities to embedded systems, helping teams deliver reliable firmware faster while maintaining high quality standards.
 
-[MDK](https://www.keil.arm.com/keil-mdk/) includes tools to establish comprehensive CI/CD workflows that include [automated builds](#automated-build-test) as well as unit testing and integration testing on [simulation models](#arm-fixed-virtual-platforms-fvp) or [target hardware](#hil-testing-with-pyocd). [Keil Studio](https://marketplace.visualstudio.com/items?itemName=Arm.keil-studio-pack/) is based on VS Code that integrates Git features and offers several VS Code extensions for static code analysis. The [CMSIS-Toolbox](https://open-cmsis-pack.github.io/cmsis-toolbox/) is a command-line interface for building embedded applications, enabling seamless integration with popular CI/CD platforms (like GitHub Actions). Integration with static code analysis tools (e.g. MISRA checking) is achieved with standard database files that third-party tools can consume.
+[MDK](https://www.keil.arm.com/keil-mdk/) includes tools to establish comprehensive CI/CD workflows that include [automated builds](#automated-build-test) as well as unit testing and integration testing on [simulation models](#arm-fixed-virtual-platforms-fvp) or [target hardware](#hil-testing-with-pyocd). [Keil Studio](https://marketplace.visualstudio.com/items?itemName=Arm.keil-studio-pack) is based on VS Code that integrates Git features and offers several VS Code extensions for static code analysis. The [CMSIS-Toolbox](https://open-cmsis-pack.github.io/cmsis-toolbox/) is a command-line interface for building embedded applications, enabling seamless integration with popular CI/CD platforms (like GitHub Actions). Integration with static code analysis tools (e.g. MISRA checking) is achieved with standard database files that third-party tools can consume.
 
 ![CI/CD Process Overview](CICD_Overview.png "CI/CD Process Overview")
 
@@ -14,7 +14,7 @@ The underlying build system of [Keil Studio](https://www.keil.arm.com/) uses the
 
 - Consistent tool installation based on a single [`vcpkg-configuration.json`](https://github.com/Arm-Examples/Hello_World/blob/main/vcpkg-configuration.json) file for desktop and CI environments.
 - CMSIS solution files (`*.csolution.yml`) that enable seamless builds in CI, for example using GitHub actions.
-- [Run and Debug Configuration](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#run-and-debug-configuration) for pyOCD that uses a single configuration file `*.cbuild-run.yml`. 
+- [Run and Debug Configuration](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#run-and-debug-configuration) for pyOCD that uses a single configuration file `*.cbuild-run.yml`.
 
 ### Automated Build Test
 
@@ -66,7 +66,7 @@ Raspberry Pi devices can serve as cost-effective self-hosted GitHub runners for 
 ### Prerequisites
 
 - Raspberry Pi 3 or newer (Arm64 architecture).
-- microSD card (minimum 8 GB).
+- microSD card (minimum 16 GB).
 - Network connection (LAN or Wi-Fi).
 - Debug probe (e.g. ULINKplus or ST-LINK) for target hardware connection.
 
@@ -74,20 +74,20 @@ Raspberry Pi devices can serve as cost-effective self-hosted GitHub runners for 
 
 The setup requires four steps:
 
-1. [Create an image for the Raspberry Pi](#1-image-the-microsd-card)
-2. [Configure your network access](#2-network-configuration-and-access)
-3. [Install the development tools](#3-install-development-tools)
-4. [Setup your GitHub runner](#4-setup-github-runner)
+1. [Create microSD card image for Raspberry Pi](#1-create-microsd-card-image-for-raspberry-pi)
+2. [Configure network access](#2-configure-network-access)
+3. [Install development tools](#3-install-development-tools)
+4. [Setup GitHub runner](#4-setup-github-runner)
 
-#### 1. Image the microSD Card
+#### 1. Create microSD Card Image for Raspberry Pi
 
-- Use [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to install Ubuntu Server 24.04 LTS (64-bit).
+- Use [Raspberry Pi Imager](https://www.raspberrypi.com/software) to install Ubuntu Server 24.04 LTS (64-bit).
 - Configure hostname (e.g., `rpi-ci`), user credentials, SSH access, and network settings during the imaging process.
   See [Ubuntu installation guide for Raspberry Pi](https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi).
 
-#### 2. Network Configuration and Access
+#### 2. Configure Network Access
 
-Configure network access and establish SSH connection for remote management.
+Configure your network access and establish SSH connection for remote management.
 
 ```bash
 # Determine the Raspberry Pi's MAC address (useful for network registration)
@@ -139,14 +139,13 @@ tar -xf cmsis-toolbox-linux-arm64.tar.gz
 
 # Download and extract pyOCD
 wget https://github.com/pyocd/pyOCD/releases/download/v0.42.0/pyocd-linux-arm64-0.42.0.zip
-mkdir pyocd_42 && cd pyocd_42
+mkdir pyocd && cd pyocd
 unzip ./../pyocd-linux-arm64-0.42.0.zip
 cd ..
 
 # Set up environment variables (persist across reboots)
-echo 'export PATH="$HOME/pyocd_42:$PATH"' >> ~/.bashrc
-echo 'export CMSIS_TOOLBOX_ROOT="$HOME/cmsis-toolbox-linux-arm64"' >> ~/.bashrc
-echo 'export PATH="$CMSIS_TOOLBOX_ROOT/bin:$PATH"' >> ~/.bashrc
+echo 'export PATH="$HOME/pyocd:$PATH"' >> ~/.bashrc
+echo 'export PATH="$HOME/cmsis-toolbox-linux-arm64/bin:$PATH"' >> ~/.bashrc
 echo 'export CMSIS_PACK_ROOT="$HOME/packs"' >> ~/.bashrc
 source ~/.bashrc
 

@@ -16,7 +16,7 @@ Bare-metal designs rely on a [superloop](https://arm-software.github.io/CMSIS_6/
 
 ## Keil RTX (CMSIS-RTOS2 Kernel)
 
-[Keil RTX](https://www.keil.arm.com/packs/cmsis-rtx-arm) is Arm’s reference RTOS kernel implementation for CMSIS-RTOS2 and is designed with strict real-time and safety requirements in mind. A key architectural property of RTX is that it never globally blocks interrupts to implement scheduling or synchronization. Instead, it relies on bounded critical sections, priority-aware mechanisms, and Arm Cortex-M architectural features to maintain kernel consistency while preserving interrupt responsiveness.
+[Keil RTX](https://www.keil.arm.com/packs/cmsis-rtx-arm) is Arm’s reference RTOS kernel implementation for [CMSIS-RTOS2](https://arm-software.github.io/CMSIS_6/latest/RTOS2/index.html) and is designed with strict real-time and safety requirements in mind. A key architectural property of RTX is that it never globally blocks interrupts to implement scheduling or synchronization. Instead, it relies on bounded critical sections, priority-aware mechanisms, and Arm Cortex-M architectural features to maintain kernel consistency while preserving interrupt responsiveness.
 
 As a result, high-priority interrupts always execute with predictable latency, independent of RTOS activity. Communication between ISRs and threads is explicitly defined through CMSIS-RTOS2 APIs that are safe to call from interrupt context, ensuring that time-critical interrupt handling remains separate from deferred thread-level processing. This behavior makes RTX particularly suitable for safety-critical and real-time control systems where interrupt masking must be minimized or avoided altogether. For [safety-critical applications](#functional-safety), the [MDK-Professional edition](https://www.keil.arm.com/keil-mdk/) includes FuSa RTS, a TÜV certified version of Keil RTX.
 
@@ -30,7 +30,7 @@ As a result, high-priority interrupts always execute with predictable latency, i
 
 Internally, FreeRTOS may temporarily mask interrupts as part of its kernel operation. Interrupts at or below a configured priority level are deferred while kernel data structures are updated. While this behavior is well-documented, it introduces interrupt latency that depends on kernel activity and requires careful interrupt priority configuration. Application code written against the native FreeRTOS API is also not inherently portable across RTOS implementations.
 
-Using the standardized CMSIS-RTOS2 API layer decouples application code from the underlying kernel by providing a common interface for threads, synchronization primitives, and timers. CMSIS-RTOS2 is used natively by Keil RTX and FuSa RTS and is also supported by FreeRTOS and Zephyr via wrapper layers. This abstraction is particularly valuable in projects that prioritize portability, long-term maintainability, or safety certification.
+Using the standardized CMSIS-RTOS2 API layer decouples application code from the underlying kernel by providing a common interface for threads, synchronization primitives, and timers. [CMSIS-RTOS2](https://arm-software.github.io/CMSIS_6/latest/RTOS2/index.html) is used natively by Keil RTX and FuSa RTS and is also supported by FreeRTOS and Zephyr via wrapper layers. This abstraction is particularly valuable in projects that prioritize portability, long-term maintainability, or safety certification.
 
 > **TIP**
 >
@@ -50,11 +50,11 @@ This level of integration comes at the cost of increased footprint and a steeper
 
 Selecting between bare-metal, Keil RTX, FreeRTOS, and Zephyr depends on system complexity, longevity, and non-functional requirements. Bare-metal designs favor simplicity, minimal overhead, and unrestricted hardware control. FreeRTOS and Keil RTX provide a middle ground, offering multitasking with relatively low overhead. Zephyr targets product-scale systems that benefit from a rich ecosystem and enforced structure.
 
-When portability across RTOS kernels or safety standards is a primary concern, CMSIS-RTOS2 combined with an appropriate kernel provides a clean abstraction that reduces long-term risk.
+When portability across RTOS kernels or safety standards is a primary concern, [CMSIS-RTOS2](https://arm-software.github.io/CMSIS_6/latest/RTOS2/index.html) combined with an appropriate kernel provides a clean abstraction that reduces long-term risk.
 
 ## Further Reading
 
 - [Shawn Hymel – When to Use an RTOS](https://shawnhymel.com/2928/when-to-use-an-rtos-an-important-decision-for-embedded-projects/)
 - [Shawn Hymel – Zephyr vs FreeRTOS](https://shawnhymel.com/3106/zephyr-vs-freertos-how-to-choose-the-right-rtos-for-your-embedded-project/)
 - [Nathan Jones - You Don't Need an RTOS](https://www.embeddedrelated.com/showarticle/1636.php)
-- [Arm – CMSIS-RTOS2 Overview](https://arm-software.github.io/CMSIS_5/RTOS2/html/index.html)
+- [Arm – CMSIS-RTOS2 Overview](https://arm-software.github.io/CMSIS_6/latest/RTOS2/index.html)
