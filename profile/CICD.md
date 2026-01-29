@@ -79,7 +79,7 @@ The setup requires four steps:
 3. [Install development tools](#3-install-development-tools)
 4. [Setup GitHub runner](#4-setup-github-runner)
 
-#### 1. Create microSD Card Image for Raspberry PI
+#### 1. Create microSD Card Image for Raspberry Pi
 
 - Use [Raspberry Pi Imager](https://www.raspberrypi.com/software) to install Ubuntu Server 24.04 LTS (64-bit).
 - Configure hostname (e.g., `rpi-ci`), user credentials, SSH access, and network settings during the imaging process.
