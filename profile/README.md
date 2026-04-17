@@ -1,6 +1,17 @@
 # Examples for Embedded Developers
 
-Arm-Examples contains ready-to-run embedded projects showcasing RTOS, machine learning, functional safety, and CI/CD automation across diverse Arm-based hardware platforms.
+Arm-Examples show the usage of Arm technology on various platforms. 
+
+## Find a Repository
+
+- [Browse all repositories](https://github.com/orgs/Arm-Examples/repositories?q=archived%3Afalse)
+- [Recently updated repositories](https://github.com/orgs/Arm-Examples/repositories?sort=updated&?q=archived%3Afalse)
+- [Popular repositories (most stars)](https://github.com/orgs/Arm-Examples/repositories?sort=stargazers&?q=archived%3Afalse)
+- Click on "Most Used Topics" (Desktop Webside only)
+
+## Featured Examples for Keil MDK
+
+The examples below are ready-to-run embedded projects for [Keil MDK](https://www.keil.arm.com/) showcasing RTOS, machine learning, functional safety, and CI/CD automation across diverse Arm-based hardware platforms.
 
 [<img src="IntroVideo.png" alt="Introduction to Keil Studio" width="318" height="205" align="left">](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250715_Introduction_to_Keil_Studio.mp4 "Introduction to Keil Studio")
 
@@ -10,7 +21,7 @@ Keil Studio is Arm's new IDE for embedded development directly in Visual Studio 
 
 <br clear="left"/>
 
-## RTOS Applications
+### RTOS Applications
 
 Keil Studio is designed for all types of embedded projects, ranging from bare-metal firmware to complex RTOS-based systems. [**Learn how to choose the right option:**](BareMetal2RTOS.md "Bare-Metal or RTOS") bare-metal, Keil RTX, FreeRTOS, or Zephyr?
 
@@ -18,9 +29,10 @@ Keil Studio is designed for all types of embedded projects, ranging from bare-me
 |:--------|:---------|:--------|
 | [Hello_World](https://github.com/Arm-Examples/Hello_World) | Various | Setup of [bare-metal or RTOS](BareMetal2RTOS.md "Bare-Metal or RTOS") configuration with [serial I/O retargeting](Serial.md "Serial I/O Messages"); prints "Hello World ..". |
 | [Middleware_USB_FS](https://github.com/Arm-Examples/Middleware_USB_FS) |  STM32F7 | MDK-Middleware with USB Device and File System for evaluation kits or custom hardware. Retargeting to a different board only requires a layer with compatible APIs. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250729_Working_with_STM32_devices.mp4). |
+| [AWS_MQTT_Demo](https://github.com/Arm-Examples/AWS_MQTT_Demo) | Various | Connects to AWS MQTT broker using TLS with mutual authentication and demonstrates the MQTT subscribe-publish workflow. |
 | [CMSIS-Zephyr](https://github.com/Arm-Examples/CMSIS-Zephyr) | Various | Zephyr application examples with Keil Studio demonstrate multi-target and debug setup. |
 
-## Edge AI and Machine Learning
+### Edge AI and Machine Learning
 
 [<img src="ML_Video.png" alt="Development flow for optimized Edge AI devices" width="318" height="190" align="left">](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4?#t=07:22 "Development flow for optimized Edge AI devices")
 
@@ -32,11 +44,11 @@ Arm offers for Edge AI development on the Cortex-M processor family and Ethos-U 
 
 | Example | Hardware | Content |
 |:--------|:---------|:--------|
-| [CMSIS-MLEK-Examples](https://github.com/Arm-Examples/cmsis-mlek-examples) | Alif Ensemble E7 |  Pre-configured machine learning (ML) projects using the ML Embedded Evaluation Kit. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4">). |
+| [CMSIS-MLEK-Examples](https://github.com/Arm-Examples/cmsis-mlek-examples) | Alif Ensemble E7 |  Pre-configured machine learning (ML) projects using the ML Embedded Evaluation Kit. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4). |
 | [SDS-Examples](https://github.com/Arm-Examples/SDS-Examples) | Various | Examples showing the usage of the Synchronous Data Streaming (SDS) Framework. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250916_SDS_Webinar.mp4). |
 | [CMSIS-Executorch](https://github.com/Arm-Examples/CMSIS-Executorch) | Ethos-U | Project template for embedded applications with Arm Ethos-U that use ExecuTorch AI models |
 
-## Functional Safety (FuSa RTS)
+### Functional Safety (FuSa RTS)
 
 [<img src="SafetyVideo.png" alt="Software development for safety critical applications" width="318" height="201" align="left">](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250930_FuSa_TRAVEO.mp4?#t=01:35 "Software development for safety critical applications")
 
@@ -51,7 +63,7 @@ The [MDK Professional Edition](https://www.keil.arm.com/keil-mdk/#mdk-v6-edition
 | [Safety-Example-Infineon-T2G](https://github.com/Arm-Examples/Safety-Example-Infineon-T2G) | Infineon Traveo T2G (Cortex-M7)| [Fusa RTS](https://developer.arm.com/Tools%20and%20Software/Keil%20MDK/FuSa%20Run-Time%20System) traffic light example, CMSIS-Driver development and verification. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250930_FuSa_TRAVEO.mp4). |
 | [Safety-Example-STM32](https://github.com/Arm-Examples/Safety-Example-STM32) | STM32H5 (Cortex-M33) | [Fusa RTS](https://developer.arm.com/Tools%20and%20Software/Keil%20MDK/FuSa%20Run-Time%20System) traffic light example. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250930_FuSa_TRAVEO.mp4). |
 
-## CI/CD Automation (GitHub Actions)
+### CI/CD Automation (GitHub Actions)
 
 Most of the above example projects include GitHub actions that run automated CI tests. The following projects help to get started with test automation. Read the section **[CI/CD](CICD.md)** to learn more.
 

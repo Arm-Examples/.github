@@ -54,7 +54,7 @@ Discover [Arm's ML ecosystem partners](https://www.arm.com/partners/ai-and-ml) o
 
 - [CMSIS-NN](https://github.com/ARM-software/CMSIS-NN) - Optimized neural network kernels for Cortex-M processors
 - [TensorFlow Runtime System](https://www.keil.arm.com/packs/tensorflow-lite-micro-tensorflow) - LiteRT software pack with examples and integration support
-- [ML Evaluation Kit (MLEK)](https://www.keil.arm.com/packs/arm-mlek-arm) - Pre-configured ML projects and template applications for microcontroller targets
+- [ML Evaluation Kit (MLEK)](https://www.keil.arm.com/packs/cmsis-mlek-arm) - Pre-configured ML projects and template applications for microcontroller targets
 - [SDS-Framework](https://github.com/ARM-software/SDS-Framework) - Workbench for capturing sensor data, validating ML models, and enabling CI/MLOps workflows
 - [CMSIS-Executorch](https://github.com/Arm-Examples/CMSIS-Executorch) - ExecuTorch integration for Cortex-M and Ethos-U targets
 - [CMSIS-Zephyr-Executorch](https://github.com/Arm-Examples/CMSIS-Zephyr-Executorch) - ExecuTorch integration for Zephyr RTOS applications
