@@ -57,7 +57,7 @@ jobs:
             --user-agent "curl/8.4.0"
             --timeout 20
             --max-retries 2
-            --max-redirects 5
+            --max-redirects 2
             "profile/**/*.md"
 
       - name: Save lychee cache
