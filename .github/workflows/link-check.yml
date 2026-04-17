@@ -4,24 +4,65 @@ on:
   pull_request:
     paths:
       - "profile/**/*.md"
+      - ".lycheeignore"
+      - ".github/workflows/link-check.yml"
+
   push:
     paths:
       - "profile/**/*.md"
+      - ".lycheeignore"
+      - ".github/workflows/link-check.yml"
+
   schedule:
     - cron: "0 20 * * 0" # Sundays 20:00 UTC
+
   workflow_dispatch:
+
+concurrency:
+  group: lychee-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   link-check:
     runs-on: ubuntu-latest
     permissions:
-      issues: write # Required for peter-evans/create-issue-from-file
+      contents: read
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
-      - name: Check links in md files
+      # Using a progressive relaxation strategy that maximizes cache reuse without breaking correctness.
+      - name: Restore lychee cache
+        id: lychee-cache
+        uses: actions/cache/restore@v5
+        with:
+          path: .lycheecache
+          key: lychee-${{ runner.os }}-${{ github.ref_name }}-${{ hashFiles('.lycheeignore', 'profile/**/*.md') }}
+          restore-keys: |
+            lychee-${{ runner.os }}-${{ github.ref_name }}-
+            lychee-${{ runner.os }}-
+
+      - name: Check links in Markdown files
         uses: lycheeverse/lychee-action@v2
         with:
-          # Only check markdown in the profile folder
-          args: --root-dir "$(pwd)" --verbose --no-progress --accept 200,206,429 --timeout 20 --max-retries 2 "profile/**/*.md"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail: true
+          args: >
+            --root-dir "$(pwd)"
+            --no-progress
+            --cache
+            --max-cache-age 1d
+            --accept 200,206,429
+            --header "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+            --user-agent "curl/8.4.0"
+            --timeout 20
+            --max-retries 2
+            --max-redirects 2
+            "profile/**/*.md"
+
+      - name: Save lychee cache
+        if: always() && steps.lychee-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v5
+        with:
+          path: .lycheecache
+          key: lychee-${{ runner.os }}-${{ github.ref_name }}-${{ hashFiles('.lycheeignore', 'profile/**/*.md') }}

@@ -1,0 +1,7 @@
+# Known intentional bad example
+
+
+# Known false positive / environment-sensitive
+https://www.raspberrypi.com/software
+https://www.raspberrypi.com/software/
+https://www.st.com/en/embedded-software/x-cube-stl.html
