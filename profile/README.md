@@ -36,7 +36,7 @@ Keil Studio is designed for all types of embedded projects, ranging from bare-me
 
 [<img src="ML_Video.png" alt="Development flow for optimized Edge AI devices" width="318" height="190" align="left">](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4?#t=07:22 "Development flow for optimized Edge AI devices")
 
-Arm offers for Edge AI development on the Cortex-M processor family and Ethos-U NPU series comprehensive tool and software support. 
+Arm offers for Edge AI development on the Cortex-M processor family and Ethos-U NPU series comprehensive tool and software support.
 
 **[Watch this video](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4?#t=07:22 "Development flow for optimized Edge AI devices")**, explore the projects below or read the section [**Edge AI**](EdgeAI.md) to learn more.
 
@@ -46,7 +46,8 @@ Arm offers for Edge AI development on the Cortex-M processor family and Ethos-U 
 |:--------|:---------|:--------|
 | [CMSIS-MLEK-Examples](https://github.com/Arm-Examples/cmsis-mlek-examples) | Alif Ensemble E7 |  Pre-configured machine learning (ML) projects using the ML Embedded Evaluation Kit. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4). |
 | [SDS-Examples](https://github.com/Arm-Examples/SDS-Examples) | Various | Examples showing the usage of the Synchronous Data Streaming (SDS) Framework. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250916_SDS_Webinar.mp4). |
-| [ModelNova](https://github.com/Arm-Examples/ModelNova) | Alif Ensemble E8, Ethos-U | Build Edge AI applications for Cortex-M/Ethos-U using Keil Studio, ModelNova Fusion Studio, and SDS-Framework.
+| [SDS-STM32N6](https://github.com/Arm-Examples/SDS-STM32N6) | [STM32N6570-DK](https://www.keil.arm.com/boards/stmicroelectronics-stm32n6570-dk-revc-f2017e0/guide) | Examples showing the usage of SDS Framework on STM32N6. |
+| [ModelNova](https://github.com/Arm-Examples/ModelNova) | Alif Ensemble E8, Ethos-U | Build Edge AI applications for Cortex-M/Ethos-U using Keil Studio, ModelNova Fusion Studio, and SDS-Framework. |
 
 ### Functional Safety (FuSa RTS)
 
@@ -77,6 +78,12 @@ Discover how DevOps improves embedded systems with Arm Keil MDK. Explore build t
 | [AWS_MQTT_Demo](https://github.com/Arm-Examples/AWS_MQTT_Demo) | Multiple FVP simulation models | Integration test on simulator. |
 | [CMSIS-Zephyr](https://github.com/Arm-Examples/CMSIS-Zephyr) | Real target hardware  | Integration test on hardware. |
 | [ModelNova](https://github.com/Arm-Examples/ModelNova) | Self-hosted runner  | Integration test with data streaming on hardware and simulation. |
+
+### Miscellaneous
+
+| Example | Hardware | Content  |
+|:--------|:---------|:---------|
+| [STM32_LiveUpdate](https://github.com/Arm-Examples/STM32_LiveUpdate) | [NUCLEO-L476RG](https://www.keil.arm.com/boards/stmicroelectronics-nucleo-l476rg-revc-1e04915/guide/) | Shows live firmware update on STM32. While running, the MCU switches from old firmware to new firmware that is stored in a different flash bank. This concept works with many STM32 devices. |
 
 ## Related
 
