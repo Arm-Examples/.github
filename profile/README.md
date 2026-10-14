@@ -36,7 +36,7 @@ Keil Studio is designed for all types of embedded projects, ranging from bare-me
 
 [<img src="ML_Video.png" alt="Development flow for optimized Edge AI devices" width="318" height="190" align="left">](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4?#t=07:22 "Development flow for optimized Edge AI devices")
 
-Arm offers for Edge AI development on the Cortex-M processor family and Ethos-U NPU series comprehensive tool and software support.
+Arm supports [LiteRT](https://www.keil.arm.com/packs/tensorflow-lite-micro-tensorflow) and [PyTorch](https://www.keil.arm.com/packs/executorch-pytorch) for Edge AI development on the Cortex-M processor family and Ethos-U NPU series comprehensive tool and software support. The [Arm CMSIS Ethos-U pack](https://www.keil.arm.com/packs/cmsis-ethos-u-arm) provides the software fundation for Arm Ethos-U55, Ethos-U65, and Ethos-U85 neural processing units (NPUs).
 
 **[Watch this video](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4?#t=07:22 "Development flow for optimized Edge AI devices")**, explore the projects below or read the section [**Edge AI**](EdgeAI.md) to learn more.
 
@@ -44,10 +44,20 @@ Arm offers for Edge AI development on the Cortex-M processor family and Ethos-U 
 
 | Example | Hardware | Content |
 |:--------|:---------|:--------|
+| [CMSIS-Ethos-Integration](https://github.com/Arm-Examples/CMSIS-Ethos-Integration) | Various | Demonstrates TensorFlow Lite Micro with devices that contain Arm Ethos-U NPU. |
 | [CMSIS-MLEK-Examples](https://github.com/Arm-Examples/cmsis-mlek-examples) | Alif Ensemble E7 |  Pre-configured machine learning (ML) projects using the ML Embedded Evaluation Kit. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4). |
 | [SDS-Examples](https://github.com/Arm-Examples/SDS-Examples) | Various | Examples showing the usage of the Synchronous Data Streaming (SDS) Framework. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250916_SDS_Webinar.mp4). |
 | [SDS-STM32N6](https://github.com/Arm-Examples/SDS-STM32N6) | [STM32N6570-DK](https://www.keil.arm.com/boards/stmicroelectronics-stm32n6570-dk-revc-f2017e0/guide) | Examples showing the usage of SDS Framework on STM32N6. |
 | [ModelNova](https://github.com/Arm-Examples/ModelNova) | Alif Ensemble E8, Ethos-U | Build Edge AI applications for Cortex-M/Ethos-U using Keil Studio, ModelNova Fusion Studio, and SDS-Framework. |
+
+### PyTorch ML Framework
+
+[Making Edge AI Development More Productive](CMSIS_for_EdgeAI_blog.pdf) gives an overview of the available tooling.
+
+
+| Example | Hardware | Content |
+|:--------|:---------|:--------|
+| [CMSIS-ExecuTorch](https://github.com/Arm-Examples/CMSIS-ExecuTorch) | Various | Template for ML applications using the PyTorch / ExecuTorch workflow. |
 
 ### Functional Safety (FuSa RTS)
 

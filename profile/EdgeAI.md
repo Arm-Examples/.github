@@ -28,7 +28,9 @@ The **ExecuTorch (Lightweight PyTorch Runtime)** is today the dominant framework
 - Rapidly growing eco-system momentum
 - Now maturing for Cortex-M + Ethos-U targets
 
-Get started with [CMSIS-Executorch](https://github.com/Arm-Examples/CMSIS-Executorch) for PyTorch-based AI models on Cortex-M and Ethos-U targets.
+Explore the [ExecuTorch software pack](https://www.keil.arm.com/packs/executorch-pytorch) and get started using the steps shown below with [CMSIS-Executorch](https://github.com/Arm-Examples/CMSIS-Executorch) for PyTorch-based AI models on Cortex-M and Ethos-U targets.
+
+![ExecuTorch.png](ExecuTorch.png)
 
 ## ML Runtime System
 
