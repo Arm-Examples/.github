@@ -393,11 +393,14 @@ idle hour, a console that is silent because a switch selects the wrong UART, a
 debug port that needs a power cycle. The agent reports these and waits; a
 one-word reply ("replugged", "powered") lets it continue.
 
-## Example: pose estimation on the Alif Ensemble E7 and E8
+## What a run looks like: pose estimation on the Alif Ensemble E7 and E8
 
-This example shows the checkpoints on a real run. The application goal, the
-hardware, and the test requirements were given to the agent in two short
-requests; everything in between was its plan.
+This is not a project to download; it is a record of one run through the
+checkpoints, so that you know what to expect from your own. The application
+goal, the hardware, and the test requirements were given to the agent in
+three short requests; everything in between was its plan. Your run will
+differ in the ML model, the board, and the problems that come up, but the
+shape is the same.
 
 The first request was the whole application:
 
@@ -464,7 +467,7 @@ board: the eight FVP frames gave keypoints bit-exact with the FVP's
 Inference took 41 to 43 ms at 400 MHz, against about 40 seconds of wall-clock
 time per frame on the FVP.
 
-The important pattern is reusable:
+To start your own run, take the pattern, not the project:
 
 1. state the application and hardware goal, and say when the board is absent;
 2. require the agent to justify the selected ML model and license;
@@ -473,6 +476,11 @@ The important pattern is reusable:
 4. use SDS playback to make test inputs deterministic;
 5. compare host and target results using task-specific tolerances; and
 6. preserve logs, raw outputs, summaries, and rendered evidence.
+
+Everything the agent produced here, from the board layer to the test
+renderer, was written for this one application. The same requests with a
+keyword spotter, a vibration classifier, or a detector on your own board give
+a project that is yours from the first commit.
 
 ## Close the loop with real data
 
