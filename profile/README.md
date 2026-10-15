@@ -36,7 +36,7 @@ Keil Studio is designed for all types of embedded projects, ranging from bare-me
 
 [<img src="ML_Video.png" alt="Development flow for optimized Edge AI devices" width="318" height="190" align="left">](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4?#t=07:22 "Development flow for optimized Edge AI devices")
 
-Arm offers for Edge AI development on the Cortex-M processor family and Ethos-U NPU series comprehensive tool and software support.
+Arm supports [LiteRT](https://www.keil.arm.com/packs/tensorflow-lite-micro-tensorflow) and [PyTorch](https://www.keil.arm.com/packs/executorch-pytorch) for Edge AI development on the Cortex-M processor family and Ethos-U NPU series comprehensive tool and software support. The [Arm CMSIS Ethos-U pack](https://www.keil.arm.com/packs/cmsis-ethos-u-arm) provides the software fundation for Arm Ethos-U55, Ethos-U65, and Ethos-U85 neural processing units (NPUs).
 
 **[Watch this video](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4?#t=07:22 "Development flow for optimized Edge AI devices")**, explore the projects below or read the section [**Edge AI**](EdgeAI.md) to learn more.
 
@@ -44,10 +44,27 @@ Arm offers for Edge AI development on the Cortex-M processor family and Ethos-U 
 
 | Example | Hardware | Content |
 |:--------|:---------|:--------|
+| [CMSIS-Ethos-Integration](https://github.com/Arm-Examples/CMSIS-Ethos-Integration) | Various | Demonstrates TensorFlow Lite Micro with devices that contain Arm Ethos-U NPU. |
 | [CMSIS-MLEK-Examples](https://github.com/Arm-Examples/cmsis-mlek-examples) | Alif Ensemble E7 |  Pre-configured machine learning (ML) projects using the ML Embedded Evaluation Kit. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250812_Multicore_Alif.mp4). |
 | [SDS-Examples](https://github.com/Arm-Examples/SDS-Examples) | Various | Examples showing the usage of the Synchronous Data Streaming (SDS) Framework. [Watch the related webinar](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250916_SDS_Webinar.mp4). |
 | [SDS-STM32N6](https://github.com/Arm-Examples/SDS-STM32N6) | [STM32N6570-DK](https://www.keil.arm.com/boards/stmicroelectronics-stm32n6570-dk-revc-f2017e0/guide) | Examples showing the usage of SDS Framework on STM32N6. |
 | [ModelNova](https://github.com/Arm-Examples/ModelNova) | Alif Ensemble E8, Ethos-U | Build Edge AI applications for Cortex-M/Ethos-U using Keil Studio, ModelNova Fusion Studio, and SDS-Framework. |
+
+### ExecuTorch on Real Devices
+
+[Making Edge AI Development More Productive](CMSIS_for_EdgeAI_blog.pdf) explains
+how target-aware deployment, reproducible real-world data, and AI-assisted
+development form a productive Edge AI workflow. The
+[ExecuTorch on Real Devices](executorch.md) tutorial applies that workflow: it
+starts from the CMSIS-ExecuTorch template, adapts a PyTorch model and application
+to a selected Cortex-M and Ethos-U target, and uses the CMSIS Developer Assistant
+to integrate, build, run, and debug the result. FVP simulation and SDS playback
+enable repeatable testing before hardware is available, and the same application
+and test data can later be validated on the real device.
+
+| Example | Hardware | Content |
+|:--------|:---------|:--------|
+| [CMSIS-ExecuTorch](https://github.com/Arm-Examples/CMSIS-ExecuTorch) | Various | Template for ML applications using the PyTorch / ExecuTorch workflow. |
 
 ### Functional Safety (FuSa RTS)
 
@@ -56,6 +73,8 @@ Arm offers for Edge AI development on the Cortex-M processor family and Ethos-U 
 The [MDK Professional Edition](https://www.keil.arm.com/keil-mdk/#mdk-v6-editions) includes safety features that help developers achieve compliance with standards like ISO 26262 (Automotive), IEC 61508 (Industrial), and IEC 62304 (Medical). It includes the [Arm Compiler for Embedded FuSa](https://developer.arm.com/Tools%20and%20Software/Arm%20Compiler%20for%20Embedded%20FuSa) and the [Arm FuSa Run-Time System](https://developer.arm.com/Tools%20and%20Software/Keil%20MDK/FuSa%20Run-Time%20System).
 
 **[Watch this video](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250930_FuSa_TRAVEO.mp4?#t=01:35 "Software development for safety critical applications")**, explore the projects below or read the section [**Functional Safety**](FuSa.md) to learn more.
+
+<br clear="left"/>
 
 | Example | Hardware |  Content |
 |:--------|:---------|:---------|
