@@ -1,21 +1,52 @@
-[**Arm Examples**](https://github.com/Arm-Examples/) » [**Edge AI**](EdgeAI.md) » **ExecuTorch on real hardware**
+[**Arm Examples**](https://github.com/Arm-Examples/) » **ExecuTorch on real devices**
 
-# Create an ExecuTorch application for real hardware
+# Create ExecuTorch applications for real devices
 
-## Introduction
-
-![ExecuTorch workflow](ExecuTorch.png "ExecuTorch workflow for Arm Cortex-M and Ethos-U")
-
-An Edge AI application is more than an ML model. The model must fit the target's
+An Edge AI application is more than an ML model. The ML model must fit the target's
 memory architecture, use its Ethos-U configuration, connect to application and
-sensor code, and run reliably on the real device.
+sensor code, and run reliably on the real device. This tutorial shows how to
+turn the CMSIS-ExecuTorch template into such an application: adapt an ML model
+developed in PyTorch to the selected Cortex-M and Ethos-U target, validate it with repeatable
+SDS tests on an FVP simulation model, and use the CMSIS Developer Assistant to
+deploy and debug the same application on real hardware.
+
+![Closed-loop Edge AI development workflow](EdgeAI_Loop.png "Real execution results guide the next ML model and application iteration")
+
+The application sits at the center of a continuous development loop.
+[CMSIS-Ethos-U](https://arm-software.github.io/CMSIS-Ethos-U/) combines the NPU
+software with device configuration and MLOps information to generate an
+optimized ML model and AI software layer for the selected target. The
+[CMSIS Developer Assistant](https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-developer-assistant)
+helps integrate, build, run, and debug the complete application, while the
+[SDS Framework](https://github.com/ARM-software/SDS-Framework) captures and
+replays representative sensor, audio, or video data.
+
+Execution on the Cortex-M and Ethos-U target produces logs, traces, inference
+outputs, performance measurements, and recorded data. This
+target evidence flows back into the next iteration: it reveals integration problems, supplies
+repeatable tests, and guides changes to the ML model and application. An FVP can
+start this loop before hardware is available; the real board later validates
+the same software with its actual peripherals, memory system, timing, and data.
+
+## Edge AI application template
 
 The [CMSIS-Executorch template](https://github.com/Arm-Examples/CMSIS-Executorch)
 provides a working starting point for this integration. It connects a PyTorch
-model to the ExecuTorch runtime, the Arm Ethos-U backend, CMSIS-Toolbox, and the
-[CMSIS-Ethos-U pack](https://www.keil.arm.com/packs/cmsis-ethos-u-arm/overview/).
+ML model to the ExecuTorch runtime, the Arm Ethos-U backend, CMSIS-Toolbox, and
+the [CMSIS-Ethos-U pack](https://www.keil.arm.com/packs/cmsis-ethos-u-arm/overview/).
 The template includes Corstone reference targets, but its workflow applies to
 all Ethos-U configurations.
+
+![ExecuTorch workflow](ExecuTorch.png "ExecuTorch workflow for Arm Cortex-M and Ethos-U")
+
+The template organizes development into five repeatable steps. **Prepare** sets
+up the Python environment and development tools. **Export** quantizes the ML
+model developed in PyTorch and compiles supported operators for the selected Ethos-U target.
+**Integrate** packages the ML model, ExecuTorch runtime, and required CMSIS
+components as an AI software layer while keeping the hardware configuration in
+CMSIS. **Build** combines that layer with the application using CMSIS-Toolbox.
+**Run** executes the same application on an FVP or real hardware, where its
+results can be inspected, tested, and debugged.
 
 The [CMSIS Developer Assistant](https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-developer-assistant)
 helps adapt that starting point to real hardware. It gives an AI coding agent
@@ -24,27 +55,32 @@ system, and the CMSIS Debugger. The agent can therefore help select the correct
 device support, create a board layer, configure a debug probe, build and program
 the application, and inspect its behavior on the connected target.
 
-This tutorial takes you through that workflow.
-
-## How the pieces fit together
+## How it works together
 
 ![Target-aware ML deployment](ExecuTorch_MLOps.png "Target-aware ML deployment with CMSIS-Toolbox")
 
-The target description and the ML deployment flow meet at a generated
-`*.cbuild-mlops.yml` file:
+CMSIS-Toolbox resolves the target description and application ML configuration
+into a generated `*.cbuild-mlops.yml` file:
 
 - The device family pack describes the processor, memory, and device-specific
   Ethos-U and Vela configuration.
-- The CMSIS solution adds the application, model, build, and run information.
+- The CMSIS solution adds the application, ML model, build, and run information.
 - CMSIS-Toolbox resolves this information for the selected target and writes
   the MLOps description.
-- `create_ai_layer.py` uses that description to quantize and export the model,
+- `create_ai_layer.py` uses that description to quantize and export the ML model,
   delegate supported operators to Ethos-U, and generate the target-specific AI
   software layer.
 - CMSIS-Toolbox builds the AI layer together with the embedded application.
 
 This preserves the hardware-specific information needed for optimization while
 keeping the deployment steps consistent across devices.
+
+The resolved description also connects deployment with testing. Its build and
+run information lets automation launch the correct image on an FVP or real
+hardware, while SDS supplies repeatable inputs and records the corresponding
+outputs. The same target configuration can therefore be used to compare the
+host-side PyTorch reference with the embedded result, catch regressions, and preserve logs, raw
+data, and rendered test evidence for each iteration.
 
 ## What you need
 
@@ -57,7 +93,7 @@ keeping the deployment steps consistent across devices.
 - [Keil Studio for VS Code](https://marketplace.visualstudio.com/items?itemName=Arm.keil-studio-pack),
   the VS Code Python extension, and the CMSIS Developer Assistant.
 - An MCP-compatible AI coding agent configured by the Developer Assistant.
-- A PyTorch model and representative calibration inputs.
+- An ML model implemented in PyTorch and representative calibration inputs.
 
 Install the [CMSIS Developer Assistant from the VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-developer-assistant),
 then reload VS Code.
@@ -68,19 +104,31 @@ Open [CMSIS-Executorch](https://github.com/Arm-Examples/CMSIS-Executorch) and
 select **Use this template**. Clone the new repository and open its folder in
 VS Code.
 
-Allow the Arm Tools Environment Manager to finish installing the tools from
-`vcpkg-configuration.json`. Then use **Terminal > Run Task > Create Python
-environment (uv)**. The task creates `.venv` and installs the Python packages
-needed to export an ExecuTorch model.
+Choose the solution that matches the NPU family you intend to target:
 
-Before changing the target, build and run the default Corstone-320/Ethos-U85
-configuration once. This separates template or tool-installation issues from
-the hardware port.
+- For Ethos-U85, select `cmsis-executorch.csolution.yml`.
+- For Ethos-U55 or Ethos-U65, select
+  `cmsis-executorch-u55.csolution.yml` as the starting point.
+
+In the VS Code CMSIS view, select **... > Select Active Solution from
+Workspace**, then choose the solution above. Load the project this way before
+continuing: the CMSIS Solution extension creates the workspace tasks used to
+set up the Python environment and generate the AI layer.
+
+With the solution loaded, follow the template README section
+[Set up the project tools](https://github.com/Arm-Examples/CMSIS-Executorch#2-set-up-the-project-tools).
+It covers tool installation and the generated task that creates the Python
+environment used to export the ML model for ExecuTorch.
+
+Before changing the target, build and run the selected reference configuration
+once. This separates template or tool-installation issues from the hardware
+port.
 
 ## 2. Connect the CMSIS Developer Assistant
 
-Install and enable the CMSIS Developer Assistant, then run **CMSIS Developer
-Assistant: Configure Agents and Skills** from the VS Code Command Palette.
+Install and enable the [CMSIS Developer Assistant](https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-developer-assistant),
+then run **CMSIS Developer Assistant: Configure Agent** from the VS Code Command
+Palette.
 Select your AI agent and install the CMSIS project skills for this workspace.
 The extension supplies the live-debugging, board-layer, pack-documentation, and
 help skills needed later in the workflow.
@@ -127,7 +175,7 @@ For an ExecuTorch application, review these parts of the resulting layer:
 - device startup and system clock initialization;
 - the CMSIS-Ethos-U driver component matching the NPU family;
 - NPU interrupt routing and cache-maintenance hooks;
-- model, arena, and command-stream placement in accessible memory;
+- ML model, arena, and command-stream placement in accessible memory;
 - STDOUT for diagnostics;
 - optional CMSIS-RTOS2 integration; and
 - the device-specific Vela system and memory configuration.
@@ -149,30 +197,31 @@ The CMSIS Solution extension generates the debugger configuration. The
 Developer Assistant uses the same build, load, and debug actions as the VS Code
 VS Code CMSIS view, so the manual and agent-driven workflows stay aligned.
 
-At this point, use a minimal application or the unchanged template model. First
-prove startup, programming, breakpoint control, and console output. Model
-conversion is much easier to diagnose after basic board bring-up works.
+At this point, use a minimal application or the starter ML model from the
+template. First prove startup, programming, breakpoint control, and console
+output. ML model conversion is much easier to diagnose after basic board
+bring-up works.
 
-## 5. Integrate your PyTorch model
+## 5. Integrate your ML model
 
-Replace the starter network in `model/model.py` with your model entry point.
+Replace the starter network in `model/model.py` with your ML model entry point.
 Keep the interface expected by `create_ai_layer.py`, including representative
 calibration inputs. Calibration data should cover the operating range seen by
 the real application; placeholder random data may produce a technically valid
-but inaccurate quantized model.
+but inaccurate quantized ML model.
 
-Ask the agent to review the model integration before exporting it:
+Ask the agent to review the ML model integration before exporting it:
 
 ```text
-Review model/model.py and the application input/output handling for my model.
+Review model/model.py and the application input/output handling for my ML model.
 Check tensor shapes, data types, calibration inputs, output interpretation,
 and whether the required operators are supported by the ExecuTorch Arm
-backend. Suggest changes, but do not export the model yet.
+backend. Suggest changes, but do not export the ML model yet.
 ```
 
 Also adapt `src/app_main.cpp` to acquire or prepare the real input tensor and to
 consume the output. Keep a deterministic test input initially; connect live
-sensors only after the model produces the expected result on the board.
+sensors only after the ML model produces the expected result on the board.
 
 ## 6. Generate the target-specific AI layer
 
@@ -184,7 +233,7 @@ cbuild setup <solution>.csolution.yml --active <target> --packs
 ```
 
 Inspect the generated `<solution>.cbuild-mlops.yml`. Confirm that its processor,
-NPU family, MAC configuration, Vela system configuration, memory mode, model,
+NPU family, MAC configuration, Vela system configuration, memory mode, ML model,
 and run information match the real hardware.
 
 Now run **Terminal > Run Task > Create AI layer**, or use:
@@ -194,8 +243,8 @@ Now run **Terminal > Run Task > Create AI layer**, or use:
 ```
 
 On Windows, use `.venv\Scripts\python.exe`. The command regenerates
-`ai_layer/` for the selected target. Repeat this step whenever the model, target,
-or Vela configuration changes.
+`ai_layer/` for the selected target. Repeat this step whenever the ML model,
+target, or Vela configuration changes.
 
 ## 7. Build, program, and run on the board
 
@@ -216,7 +265,7 @@ add temporary logging unless live inspection cannot answer the question.
 
 The application should initialize the NPU, load the embedded `.pte` program,
 execute the delegated graph, and print a result. A useful first acceptance test
-compares the target output against a known result from the host-side model.
+compares the target output against a known result from the host-side PyTorch reference.
 
 ## 8. Debug integration problems with target evidence
 
@@ -234,7 +283,7 @@ base address, command-stream address, tensor buffers, and interrupt handling.
 ```
 
 ```text
-Compare the linker map with the model and tensor-pool sizes. Check that every
+Compare the linker map with the ML model and tensor-pool sizes. Check that every
 buffer is in memory accessible by both the Cortex-M processor and the NPU and
 that required alignment and cache maintenance are correct.
 ```
@@ -246,14 +295,17 @@ whose shape or type differs from the exported program.
 
 ## 9. Build an SDS test harness
 
-![Edge AI development loop](EdgeAI_Loop.png "Target evidence closes the Edge AI development loop")
+Edge AI applications interact with a physical world that changes continuously.
+Their behavior depends on sensor, audio, or video data that can be difficult to
+reproduce; recreating the exact input that exposed a failure may be as hard as
+finding the problem itself.
 
-After deterministic inference works, use the
-[Synchronous Data Stream Framework](https://github.com/ARM-software/SDS-Framework)
-to make the input and output of the algorithm reproducible. SDS can play a
-recorded sensor, audio, or image stream into an application and record the
-algorithm output at the same time. The same files can drive an FVP during early
-development and the real board later.
+The [Synchronous Data Stream Framework](https://github.com/ARM-software/SDS-Framework)
+turns those real-world conditions into reusable engineering data. It captures
+input and algorithm-output streams, then replays the same inputs repeatedly on
+an FVP or real hardware. A one-off failure can therefore become a repeatable
+test case for comparing ML model versions, optimizing the application, and
+verifying that a change actually fixed the problem.
 
 ### Define the streams before writing target code
 
@@ -262,13 +314,13 @@ vision application might use:
 
 | Stream | Direction | Contents |
 |---|---|---|
-| `CameraIn` | Playback to the application | Preprocessed camera frame presented to the model |
+| `CameraIn` | Playback to the application | Preprocessed camera frame presented to the ML model |
 | `ModelOut` | Record from the application | Raw logits, heatmaps, boxes, or keypoints |
 | `Result` | Record from the application | Post-processed result used by the product |
 
-Keep raw model output and post-processed application output separate. This lets
-you determine whether a regression came from model conversion or from the C/C++
-post-processing code. Define each stream's tensor shape, data type, byte order,
+Keep raw ML model output and post-processed application output separate. This
+lets you determine whether a regression came from ML model conversion or from
+the C/C++ post-processing code. Define each stream's tensor shape, data type, byte order,
 sample rate or frame rate, and timeslot relationship in its SDS metadata.
 
 Ask the agent to implement the harness explicitly:
@@ -368,7 +420,7 @@ feed in and out the test harness. Store images of the tests.
 In this example, the agent found
 [Lightweight OpenPose for PyTorch](https://github.com/ModelBunker/Lightweight-OpenPose-PyTorch)
 and adapted its MobileNet v1 backbone, CPM block, and initial OpenPose stage for
-ExecuTorch and Ethos-U. The exported single-person model accepts an NHWC RGB
+ExecuTorch and Ethos-U. The exported single-person ML model accepts an NHWC RGB
 camera frame and produces 19 stride-8 heatmaps: 18 body keypoints plus
 background. Normalization and the checkpoint's BGR channel ordering were folded
 into the graph so that the embedded application could pass camera pixels across
@@ -376,9 +428,9 @@ a simple quantized boundary.
 
 The agent omitted the part-affinity-field output used for multi-person assembly
 and made the refinement-stage count configurable. With no refinement stages,
-the model fit the available application MRAM; each added stage increased model
-size. This is a good example of adapting a research model to the constraints and
-actual product requirement rather than exporting the upstream network unchanged.
+the ML model fit the available application MRAM; each added stage increased its
+size. This is a good example of adapting a research ML model to the constraints
+and actual product requirement rather than exporting the upstream network unchanged.
 
 SDS then fed a set of labeled images into the FVP and recorded the heatmaps and
 decoded keypoints. The result renderer stored side-by-side input and skeleton
@@ -389,7 +441,7 @@ automation.
 The important pattern is reusable:
 
 1. state the application and hardware goal;
-2. require the agent to justify the selected model and license;
+2. require the agent to justify the selected ML model and license;
 3. define the embedded input and output tensor boundary;
 4. use SDS playback to make test inputs deterministic;
 5. compare host and FVP results using task-specific tolerances; and
@@ -400,13 +452,13 @@ The important pattern is reusable:
 The productive loop is:
 
 1. describe the selected hardware accurately;
-2. generate an optimized model and software layer for that target;
+2. generate an optimized ML model and software layer for that target;
 3. build and run the complete application;
 4. collect evidence from the real device; and
-5. feed the results and captured data into the next model or application
+5. feed the results and captured data into the next ML model or application
    iteration.
 
-The model is only one component. Success means that the complete application
+The ML model is only one component. Success means that the complete application
 works with the target's real memory, peripherals, timing, and data.
 
 ## What to keep and what to replace
@@ -414,7 +466,7 @@ works with the target's real memory, peripherals, timing, and data.
 | Keep from the template | Adapt for your application |
 |---|---|
 | Three-step CMSIS/MLOps/build flow | Board, device, and debugger configuration |
-| ExecuTorch runtime and Ethos-U backend components | PyTorch model and calibration data |
+| ExecuTorch runtime and Ethos-U backend components | ML model implemented in PyTorch and calibration data |
 | `create_ai_layer.py` and generated AI-layer structure | Input pipeline and output interpretation |
 | CMSIS-Ethos-U driver integration pattern | Memory regions, cache policy, and interrupts |
 | CI structure and FVP reference targets | Hardware tests and captured real-world data |
@@ -433,9 +485,9 @@ SDS recording and playback over USB. It is a useful reference for four parts of
 your own port:
 
 - adding a vendor device and board target to the CMSIS solution;
-- turning a larger PyTorch vision model into a target-specific AI layer;
+- turning a larger vision ML model implemented in PyTorch into a target-specific AI layer;
 - dividing work between the Ethos-U NPU and Cortex-M application code; and
-- capturing real model inputs and replaying them as repeatable hardware tests.
+- capturing real ML model inputs and replaying them as repeatable hardware tests.
 
 Use it as an implementation reference rather than a second starting template:
 create your application from CMSIS-Executorch, then bring across only the board,

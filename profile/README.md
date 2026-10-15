@@ -50,10 +50,17 @@ Arm supports [LiteRT](https://www.keil.arm.com/packs/tensorflow-lite-micro-tenso
 | [SDS-STM32N6](https://github.com/Arm-Examples/SDS-STM32N6) | [STM32N6570-DK](https://www.keil.arm.com/boards/stmicroelectronics-stm32n6570-dk-revc-f2017e0/guide) | Examples showing the usage of SDS Framework on STM32N6. |
 | [ModelNova](https://github.com/Arm-Examples/ModelNova) | Alif Ensemble E8, Ethos-U | Build Edge AI applications for Cortex-M/Ethos-U using Keil Studio, ModelNova Fusion Studio, and SDS-Framework. |
 
-### PyTorch ML Framework
+### ExecuTorch on Real Devices
 
-[Making Edge AI Development More Productive](CMSIS_for_EdgeAI_blog.pdf) gives an overview of the available tooling.
-
+[Making Edge AI Development More Productive](CMSIS_for_EdgeAI_blog.pdf) explains
+how target-aware deployment, reproducible real-world data, and AI-assisted
+development form a productive Edge AI workflow. The
+[ExecuTorch on Real Devices](executorch.md) tutorial applies that workflow: it
+starts from the CMSIS-ExecuTorch template, adapts a PyTorch model and application
+to a selected Cortex-M and Ethos-U target, and uses the CMSIS Developer Assistant
+to integrate, build, run, and debug the result. FVP simulation and SDS playback
+enable repeatable testing before hardware is available, and the same application
+and test data can later be validated on the real device.
 
 | Example | Hardware | Content |
 |:--------|:---------|:--------|
@@ -66,6 +73,8 @@ Arm supports [LiteRT](https://www.keil.arm.com/packs/tensorflow-lite-micro-tenso
 The [MDK Professional Edition](https://www.keil.arm.com/keil-mdk/#mdk-v6-editions) includes safety features that help developers achieve compliance with standards like ISO 26262 (Automotive), IEC 61508 (Industrial), and IEC 62304 (Medical). It includes the [Arm Compiler for Embedded FuSa](https://developer.arm.com/Tools%20and%20Software/Arm%20Compiler%20for%20Embedded%20FuSa) and the [Arm FuSa Run-Time System](https://developer.arm.com/Tools%20and%20Software/Keil%20MDK/FuSa%20Run-Time%20System).
 
 **[Watch this video](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250930_FuSa_TRAVEO.mp4?#t=01:35 "Software development for safety critical applications")**, explore the projects below or read the section [**Functional Safety**](FuSa.md) to learn more.
+
+<br clear="left"/>
 
 | Example | Hardware |  Content |
 |:--------|:---------|:---------|

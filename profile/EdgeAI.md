@@ -28,9 +28,7 @@ The **ExecuTorch (Lightweight PyTorch Runtime)** is today the dominant framework
 - Rapidly growing eco-system momentum
 - Now maturing for Cortex-M + Ethos-U targets
 
-Explore the [ExecuTorch software pack](https://www.keil.arm.com/packs/executorch-pytorch) and get started using the steps shown below with [CMSIS-Executorch](https://github.com/Arm-Examples/CMSIS-Executorch) for PyTorch-based AI models on Cortex-M and Ethos-U targets.
-
-![ExecuTorch.png](ExecuTorch.png)
+The [ExecuTorch tutorial](executorch.md) shows how to use the CMSIS-Executorch template to develop, test, and deploy PyTorch-based ML applications on Cortex-M and Ethos-U hardware.
 
 ## ML Runtime System
 
@@ -58,5 +56,5 @@ Discover [Arm's ML ecosystem partners](https://www.arm.com/partners/ai-and-ml) o
 - [TensorFlow Runtime System](https://www.keil.arm.com/packs/tensorflow-lite-micro-tensorflow) - LiteRT software pack with examples and integration support
 - [ML Evaluation Kit (MLEK)](https://www.keil.arm.com/packs/cmsis-mlek-arm) - Pre-configured ML projects and template applications for microcontroller targets
 - [SDS-Framework](https://github.com/ARM-software/SDS-Framework) - Workbench for capturing sensor data, validating ML models, and enabling CI/MLOps workflows
-- [CMSIS-Executorch](https://github.com/Arm-Examples/CMSIS-Executorch) - ExecuTorch integration for Cortex-M and Ethos-U targets
+- [CMSIS-Executorch](https://github.com/Arm-Examples/CMSIS-Executorch) - Application template for developing PyTorch-based ML applications on Cortex-M and Ethos-U targets
 - [CMSIS-Zephyr-Executorch](https://github.com/Arm-Examples/CMSIS-Zephyr-Executorch) - ExecuTorch integration for Zephyr RTOS applications
