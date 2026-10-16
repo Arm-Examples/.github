@@ -61,6 +61,7 @@ on Cortex-M and Ethos-U hardware.
 | Example | Hardware | Content |
 |:--------|:---------|:--------|
 | [CMSIS-ExecuTorch](https://github.com/Arm-Examples/CMSIS-ExecuTorch) | Various | Template for ML applications using the PyTorch / ExecuTorch workflow. |
+| [CMSIS-Executorch-Traffic-Counter](https://github.com/Arm-Examples/CMSIS-Executorch-Traffic-Counter) | Alif DevKit-E7 |  Ultralytics YOLO26n ported to Ethos-U55 using the [CMSIS Developer Assistent](https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-developer-assistant). |
 
 ### Functional Safety (FuSa RTS)
 
