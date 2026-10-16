@@ -544,7 +544,7 @@ The video of the display is also capture using an SDS data stream.
 
 <br clear="left"/>
 
-## Behind the prompts: the three-step workflow
+## Behind the prompts: the 3-step workflow
 
 The agent runs these steps through the CMSIS Developer Assistant and the
 workspace tasks. For a CI script, or to follow along by hand:
@@ -555,8 +555,10 @@ cbuild setup <solution>.csolution.yml --active <target> --packs   # writes <solu
 cbuild <solution>.csolution.yml --active <target>                 # builds the application
 ```
 
-On Windows, use `.venv\Scripts\python.exe`. Inspect the generated
-`<solution>.cbuild-mlops.yml` after the first step: its processor, NPU family,
+> [!NOTE]
+> On Windows, use `.venv\Scripts\python.exe`. 
+
+Inspect the generated `<solution>.cbuild-mlops.yml` after the first step: its processor, NPU family,
 MAC configuration, Vela system configuration, memory mode, ML model, and run
 information must match the real hardware. Repeat the second step whenever the
 ML model, target, or Vela configuration changes. In VS Code, **Terminal > Run
