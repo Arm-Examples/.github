@@ -529,25 +529,18 @@ works with the target's real memory, peripherals, timing, and data.
 
 [<img src="TrafficCounter.png" alt="Ultralytics YOLO26n traffic counter" width="238" height="419" align="left">](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/TrafficCounter.mp4 "Integration of Ultralytics YOLO26n traffic counter")
 
-The [CMSIS ExecuTorch traffic counter](https://github.com/Arm-Examples/CMSIS-Executorch-Traffic-Counter) example
-shows what a complete application derived from the template can become. It runs
-an Ultralytics YOLO26n detector on the Ethos-U55-256 of an Alif Ensemble E7
-AppKit while a Cortex-M55 tracks and counts vehicles crossing a line in the
-camera image.
+The [CMSIS ExecuTorch traffic counter](https://github.com/Arm-Examples/CMSIS-Executorch-Traffic-Counter)
+runs on an Alif Ensemble E7 AppKit. The Ethos-U55-256 accelerates YOLO26n
+inference, while the Cortex-M application handles the camera and display
+pipelines, tracks vehicles, and counts line crossings.
 
-The project extends the template with the real board and memory configuration,
-camera and display pipelines, application-side tracking, an embedded UI, and
-SDS recording and playback over USB. It is a useful reference for four parts of
-your own port:
+It demonstrates board integration, camera and display pipelines, an embedded
+UI, and SDS recording over USB. Use it as a example to bring your own applications
+into a new CMSIS-Executorch project.
 
-  - adding a vendor device and board target to the CMSIS solution;
-  - turning a larger vision ML model implemented in PyTorch into a target-specific AI layer;
-  - dividing work between the Ethos-U NPU and Cortex-M application code; and
-  - capturing real ML model inputs and replaying them as repeatable hardware tests.
-
-Use it as an implementation reference rather than a second starting template:
-create your application from CMSIS-Executorch, then bring across only the board,
-pipeline, SDS, or test patterns that fit your hardware.
+The video shows recorded camera data replayed to the Alif Ensemble E7 AppKit
+over SDS. Without SDS playback, the application uses the board's camera.
+The video of the display is also capture using an SDS data stream.
 
 <br clear="left"/>
 
