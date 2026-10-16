@@ -52,15 +52,11 @@ Arm supports [LiteRT](https://www.keil.arm.com/packs/tensorflow-lite-micro-tenso
 
 ### ExecuTorch on Real Devices
 
-[Making Edge AI Development More Productive](CMSIS_for_EdgeAI_blog.pdf) explains
-how target-aware deployment, reproducible real-world data, and AI-assisted
-development form a productive Edge AI workflow. The
-[ExecuTorch on Real Devices](executorch.md) tutorial applies that workflow: it
-starts from the CMSIS-ExecuTorch template, adapts a PyTorch model and application
-to a selected Cortex-M and Ethos-U target, and uses the CMSIS Developer Assistant
-to integrate, build, run, and debug the result. FVP simulation and SDS playback
-enable repeatable testing before hardware is available, and the same application
-and test data can later be validated on the real device.
+[Making Edge AI Development More Productive](https://developer.arm.com/community/arm-community-blogs/b/tools-software-ides-blog/posts/making-edge-ai-development-more-productive) introduces
+target-aware deployment, reproducible real-world data, and AI-assisted development.
+The [ExecuTorch on Real Devices](executorch.md) tutorial demonstrates these features
+with a CMSIS-ExecuTorch template, FVP simulation, SDS data playback, and validation
+on Cortex-M and Ethos-U hardware.
 
 | Example | Hardware | Content |
 |:--------|:---------|:--------|
