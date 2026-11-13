@@ -63,6 +63,15 @@ on Cortex-M and Ethos-U hardware.
 | [CMSIS-ExecuTorch](https://github.com/Arm-Examples/CMSIS-ExecuTorch) | Various | Template for ML applications using the PyTorch / ExecuTorch workflow. |
 | [CMSIS-Executorch-Traffic-Counter](https://github.com/Arm-Examples/CMSIS-Executorch-Traffic-Counter) | Alif DevKit-E7 |  Ultralytics YOLO26n ported to Ethos-U55 using the [CMSIS Developer Assistent](https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-developer-assistant). |
 
+[<img src="executorch-hackathon.png" alt="ExecuTorch Hackathon" width="317" height="109" align="left">](https://lnkd.in/p/ew3CeDDa "ExecuTorch Hackathon")
+
+At the ExecuTorch Hackathon, community engineers used the
+**[CMSIS-Executorch template](https://github.com/Arm-Examples/CMSIS-Executorch)**
+to turn Edge AI ideas into applications for Cortex-M and Ethos-U hardware.
+[Explore ten community contributions from the event](hackathon.md).
+
+<br clear="left"/>
+
 ### Functional Safety (FuSa RTS)
 
 [<img src="SafetyVideo.png" alt="Software development for safety critical applications" width="318" height="201" align="left">](https://armkeil.blob.core.windows.net/developer/Files/videos/KeilStudio/20250930_FuSa_TRAVEO.mp4?#t=01:35 "Software development for safety critical applications")
@@ -99,6 +108,8 @@ Discover how DevOps improves embedded systems with Arm Keil MDK. Explore build t
 
 | Example | Hardware | Content  |
 |:--------|:---------|:---------|
+| [SEGGER-RTT](https://github.com/Arm-Examples/SEGGER-RTT) | [STM32F407G-DISC1](https://www.keil.arm.com/boards/stmicroelectronics-stm32f407g-disc1-revc1-623aa41/guide/), [KIT_T2G-B-H_LITE](https://www.keil.arm.com/boards/infineon-kit-t2g-b-h-lite-v1-34ab4d8/guide/) | Demonstrates standard input and output over SEGGER RTT with pyOCD on single-core and multicore targets. |
+| [SEGGER-SystemView](https://github.com/Arm-Examples/SEGGER-SystemView) | [NUCLEO-H743ZI2](https://www.keil.arm.com/boards/stmicroelectronics-nucleo-h743zi2-reve-a8d98ff/guide/) | Records FreeRTOS and system activity through SEGGER RTT with pyOCD for analysis in SEGGER SystemView. |
 | [STM32_LiveUpdate](https://github.com/Arm-Examples/STM32_LiveUpdate) | [NUCLEO-L476RG](https://www.keil.arm.com/boards/stmicroelectronics-nucleo-l476rg-revc-1e04915/guide/) | Shows live firmware update on STM32. While running, the MCU switches from old firmware to new firmware that is stored in a different flash bank. This concept works with many STM32 devices. |
 
 ## Related
