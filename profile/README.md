@@ -21,6 +21,12 @@ Keil Studio is Arm's new IDE for embedded development directly in Visual Studio 
 
 <br clear="left"/>
 
+### CMSIS Developer Assistant
+
+The [CMSIS Developer Assistant](https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-developer-assistant) connects MCP-compatible AI coding agents to CMSIS projects, software-pack documentation, CMSIS-Toolbox, the CMSIS Debugger, and target hardware. It helps agents understand and adapt projects, resolve build problems, and build, load, run, inspect, and debug Cortex-M applications without adding diagnostic code that changes target behavior.
+
+Install the extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-developer-assistant), then run **CMSIS Developer Assistant: Configure Agent** from the VS Code Command Palette. Open one of the examples below and ask your agent to inspect the loaded solution, active target, required packs, and available debug adapters.
+
 ### RTOS Applications
 
 Keil Studio is designed for all types of embedded projects, ranging from bare-metal firmware to complex RTOS-based systems. [**Learn how to choose the right option:**](BareMetal2RTOS.md "Bare-Metal or RTOS") bare-metal, Keil RTX, FreeRTOS, or Zephyr?
