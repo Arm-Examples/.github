@@ -21,6 +21,16 @@ Keil Studio is Arm's new IDE for embedded development directly in Visual Studio 
 
 <br clear="left"/>
 
+### CMSIS Developer Assistant
+
+The [CMSIS Developer Assistant](https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-developer-assistant) connects AI coding agents to CMSIS, CMake-native, and Zephyr-based embedded projects. It gives agents access to project information, documentation, build tools, the debugger, and target hardware.
+
+Install the extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-developer-assistant), then run **CMSIS Developer Assistant: Configure Agent** from the VS Code Command Palette.
+
+| Example | Hardware | Content |
+|:--------|:---------|:--------|
+| [CMSIS Developer Assistant Introduction](https://github.com/Arm-Examples/CMSIS_Developer_Assistant_Introduction) | PIC32CK GC Curiosity Ultra | Introduction webinar and example created with the assistant: a real-time spectrum analyzer with separate production and self-test board layers. |
+
 ### RTOS Applications
 
 Keil Studio is designed for all types of embedded projects, ranging from bare-metal firmware to complex RTOS-based systems. [**Learn how to choose the right option:**](BareMetal2RTOS.md "Bare-Metal or RTOS") bare-metal, Keil RTX, FreeRTOS, or Zephyr?
@@ -55,13 +65,18 @@ Arm supports [LiteRT](https://www.keil.arm.com/packs/tensorflow-lite-micro-tenso
 [Making Edge AI Development More Productive](https://developer.arm.com/community/arm-community-blogs/b/tools-software-ides-blog/posts/making-edge-ai-development-more-productive) introduces
 target-aware deployment, reproducible real-world data, and AI-assisted development.
 The [ExecuTorch on Real Devices](executorch.md) tutorial demonstrates these features
-with a CMSIS-ExecuTorch template, FVP simulation, SDS data playback, and validation
+with the [ExecuTorch template](https://github.com/Arm-Examples/ExecuTorch-template), FVP simulation, SDS data playback, and validation
 on Cortex-M and Ethos-U hardware.
+
+> **Starting a new project?** Use the
+> [ExecuTorch template](https://github.com/Arm-Examples/ExecuTorch-template).
+> It provides ready-to-use CMSIS and Zephyr projects for Cortex-M and Ethos-U.
 
 | Example | Hardware | Content |
 |:--------|:---------|:--------|
-| [CMSIS-ExecuTorch](https://github.com/Arm-Examples/CMSIS-ExecuTorch) | Various | Template for ML applications using the PyTorch / ExecuTorch workflow. |
-| [CMSIS-Executorch-Traffic-Counter](https://github.com/Arm-Examples/CMSIS-Executorch-Traffic-Counter) | Alif DevKit-E7 |  Ultralytics YOLO26n ported to Ethos-U55 using the [CMSIS Developer Assistent](https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-developer-assistant). |
+| [ExecuTorch template](https://github.com/Arm-Examples/ExecuTorch-template) | Cortex-M and Ethos-U | **Recommended starting point for new projects.** Select **Use this template** to create a CMSIS or Zephyr application using ExecuTorch. |
+| [CMSIS-ExecuTorch](https://github.com/Arm-Examples/CMSIS-ExecuTorch) | Various | Earlier CMSIS-only template retained for existing projects. |
+| [CMSIS-Executorch-Traffic-Counter](https://github.com/Arm-Examples/CMSIS-Executorch-Traffic-Counter) | Alif DevKit-E7 | Ultralytics YOLO26n ported to Ethos-U55 using the [CMSIS Developer Assistant](https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-developer-assistant). |
 
 [<img src="executorch-hackathon.png" alt="ExecuTorch Hackathon" width="317" height="109" align="left">](https://lnkd.in/p/ew3CeDDa "ExecuTorch Hackathon")
 
