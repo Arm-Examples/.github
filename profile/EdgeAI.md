@@ -58,4 +58,3 @@ Discover [Arm's ML ecosystem partners](https://www.arm.com/partners/ai-and-ml) o
 - [SDS-Framework](https://github.com/ARM-software/SDS-Framework) - Workbench for capturing sensor data, validating ML models, and enabling CI/MLOps workflows
 - [ExecuTorch template](https://github.com/Arm-Examples/ExecuTorch-template) - Recommended CMSIS and Zephyr application template for PyTorch-based ML applications on Cortex-M and Ethos-U targets
 - [CMSIS-Executorch](https://github.com/Arm-Examples/CMSIS-Executorch) - Earlier CMSIS-only template retained for existing projects
-- [CMSIS-Zephyr-Executorch](https://github.com/Arm-Examples/CMSIS-Zephyr-Executorch) - Earlier Zephyr integration retained for existing projects
