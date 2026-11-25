@@ -23,9 +23,13 @@ Keil Studio is Arm's new IDE for embedded development directly in Visual Studio 
 
 ### CMSIS Developer Assistant
 
-The [CMSIS Developer Assistant](https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-developer-assistant) connects MCP-compatible AI coding agents to CMSIS projects, software-pack documentation, CMSIS-Toolbox, the CMSIS Debugger, and target hardware. It helps agents understand and adapt projects, resolve build problems, and build, load, run, inspect, and debug Cortex-M applications without adding diagnostic code that changes target behavior.
+The [CMSIS Developer Assistant](https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-developer-assistant) connects AI coding agents to CMSIS, CMake-native, and Zephyr-based embedded projects. It gives agents access to project information, documentation, build tools, the debugger, and target hardware.
 
-Install the extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-developer-assistant), then run **CMSIS Developer Assistant: Configure Agent** from the VS Code Command Palette. Open one of the examples below and ask your agent to inspect the loaded solution, active target, required packs, and available debug adapters.
+Install the extension from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-developer-assistant), then run **CMSIS Developer Assistant: Configure Agent** from the VS Code Command Palette.
+
+| Example | Hardware | Content |
+|:--------|:---------|:--------|
+| [CMSIS Developer Assistant Introduction](https://github.com/Arm-Examples/CMSIS_Developer_Assistant_Introduction) | PIC32CK GC Curiosity Ultra | Introduction webinar and example created with the assistant: a real-time spectrum analyzer with separate production and self-test board layers. |
 
 ### RTOS Applications
 
