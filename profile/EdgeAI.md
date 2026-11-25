@@ -19,7 +19,7 @@ The **[LiteRT (TensorFlow Lite Runtime)](https://www.keil.arm.com/packs/tensorfl
 
 Explore the [LiteRT software pack for Arm Cortex-M](https://github.com/MDK-Packs/tensorflow-pack) with ready-to-use workflow templates and examples.
 
-[![PyTorch](PyTorch.png "ExecuTorch (PyTorch-based)")](https://github.com/Arm-Examples/CMSIS-Executorch)
+[![PyTorch](PyTorch.png "ExecuTorch (PyTorch-based)")](https://github.com/Arm-Examples/ExecuTorch-template)
 
 The **ExecuTorch (Lightweight PyTorch Runtime)** is today the dominant framework in research, making new ML model development and sharing easier.
 
@@ -28,7 +28,7 @@ The **ExecuTorch (Lightweight PyTorch Runtime)** is today the dominant framework
 - Rapidly growing eco-system momentum
 - Now maturing for Cortex-M + Ethos-U targets
 
-The [ExecuTorch tutorial](executorch.md) shows how to use the CMSIS-Executorch template to develop, test, and deploy PyTorch-based ML applications on Cortex-M and Ethos-U hardware.
+The [ExecuTorch tutorial](executorch.md) shows how to use the [ExecuTorch template](https://github.com/Arm-Examples/ExecuTorch-template) to develop, test, and deploy PyTorch-based ML applications on Cortex-M and Ethos-U hardware with CMSIS or Zephyr.
 
 ## ML Runtime System
 
@@ -42,7 +42,7 @@ The [Vela compiler](https://pypi.org/project/ethos-u-vela/) provides detailed in
 
 ## Embedded Development Workflow
 
-The embedded development workflow for Edge AI applications requires training data for ML model training that executes on a host or MLOps system. Once trained, the ML model is deployed to the embedded target as described above. [Keil MDK](https://www.keil.arm.com/keil-mdk/) provides all tools that are required to develop and integrate the optimized ML models with the application code, device drivers, RTOS, and middleware components. Vela, Arm Compiler and FVP simulation models (the MLOps backend tools) are provided via Docker containers and CMSIS-ExecuTorch that includes also the runtime system.
+The embedded development workflow for Edge AI applications requires training data for ML model training that executes on a host or MLOps system. Once trained, the ML model is deployed to the embedded target as described above. [Keil MDK](https://www.keil.arm.com/keil-mdk/) provides all tools that are required to develop and integrate the optimized ML models with the application code, device drivers, RTOS, and middleware components. Vela, Arm Compiler and FVP simulation models provide the MLOps backend tools, while the [ExecuTorch template](https://github.com/Arm-Examples/ExecuTorch-template) integrates the runtime system with CMSIS or Zephyr projects.
 
 The [SDS-Framework](https://www.keil.arm.com/packs/sds-arm) is a workbench for ML model development. You may capture and record real-world sensor, audio, or video data streams directly from your target hardware for ML model training. SDS enables data playback and validation of the ML model output against performance indicators. The option to run tests on hardware or FVP simulation models enables automated testing and CI/MLOps workflows without requiring physical target hardware at every step.
 
@@ -56,5 +56,6 @@ Discover [Arm's ML ecosystem partners](https://www.arm.com/partners/ai-and-ml) o
 - [TensorFlow Runtime System](https://www.keil.arm.com/packs/tensorflow-lite-micro-tensorflow) - LiteRT software pack with examples and integration support
 - [ML Evaluation Kit (MLEK)](https://www.keil.arm.com/packs/cmsis-mlek-arm) - Pre-configured ML projects and template applications for microcontroller targets
 - [SDS-Framework](https://github.com/ARM-software/SDS-Framework) - Workbench for capturing sensor data, validating ML models, and enabling CI/MLOps workflows
-- [CMSIS-Executorch](https://github.com/Arm-Examples/CMSIS-Executorch) - Application template for developing PyTorch-based ML applications on Cortex-M and Ethos-U targets
-- [CMSIS-Zephyr-Executorch](https://github.com/Arm-Examples/CMSIS-Zephyr-Executorch) - ExecuTorch integration for Zephyr RTOS applications
+- [ExecuTorch template](https://github.com/Arm-Examples/ExecuTorch-template) - Recommended CMSIS and Zephyr application template for PyTorch-based ML applications on Cortex-M and Ethos-U targets
+- [CMSIS-Executorch](https://github.com/Arm-Examples/CMSIS-Executorch) - Earlier CMSIS-only template retained for existing projects
+- [CMSIS-Zephyr-Executorch](https://github.com/Arm-Examples/CMSIS-Zephyr-Executorch) - Earlier Zephyr integration retained for existing projects

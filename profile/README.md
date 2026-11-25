@@ -55,7 +55,7 @@ Arm supports [LiteRT](https://www.keil.arm.com/packs/tensorflow-lite-micro-tenso
 [Making Edge AI Development More Productive](https://developer.arm.com/community/arm-community-blogs/b/tools-software-ides-blog/posts/making-edge-ai-development-more-productive) introduces
 target-aware deployment, reproducible real-world data, and AI-assisted development.
 The [ExecuTorch on Real Devices](executorch.md) tutorial demonstrates these features
-with a CMSIS-ExecuTorch template, FVP simulation, SDS data playback, and validation
+with the [ExecuTorch template](https://github.com/Arm-Examples/ExecuTorch-template), FVP simulation, SDS data playback, and validation
 on Cortex-M and Ethos-U hardware.
 
 > **Starting a new project?** Use the
@@ -64,8 +64,8 @@ on Cortex-M and Ethos-U hardware.
 
 | Example | Hardware | Content |
 |:--------|:---------|:--------|
-| [ExecuTorch-template](https://github.com/Arm-Examples/ExecuTorch-template) | Cortex-M and Ethos-U | **Recommended starting point for new projects.** Select **Use this template** to create a CMSIS or Zephyr application using ExecuTorch. |
-| [CMSIS-ExecuTorch](https://github.com/Arm-Examples/CMSIS-ExecuTorch) | Various | Existing template used by the *ExecuTorch on Real Devices* tutorial. |
+| [ExecuTorch template](https://github.com/Arm-Examples/ExecuTorch-template) | Cortex-M and Ethos-U | **Recommended starting point for new projects.** Select **Use this template** to create a CMSIS or Zephyr application using ExecuTorch. |
+| [CMSIS-ExecuTorch](https://github.com/Arm-Examples/CMSIS-ExecuTorch) | Various | Earlier CMSIS-only template retained for existing projects. |
 | [CMSIS-Executorch-Traffic-Counter](https://github.com/Arm-Examples/CMSIS-Executorch-Traffic-Counter) | Alif DevKit-E7 | Ultralytics YOLO26n ported to Ethos-U55 using the [CMSIS Developer Assistant](https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-developer-assistant). |
 
 [<img src="executorch-hackathon.png" alt="ExecuTorch Hackathon" width="317" height="109" align="left">](https://lnkd.in/p/ew3CeDDa "ExecuTorch Hackathon")

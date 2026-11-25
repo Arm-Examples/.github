@@ -5,7 +5,8 @@
 An Edge AI application is more than an ML model. The ML model must fit the target's
 memory architecture, use its Ethos-U configuration, connect to application and
 sensor code, and run reliably on the real device. This tutorial shows how to
-turn the CMSIS-Executorch template into such an application with an AI coding
+turn the [ExecuTorch template](https://github.com/Arm-Examples/ExecuTorch-template)
+into such an application with an AI coding
 agent: adapt an ML model developed in PyTorch to the selected Cortex-M and
 Ethos-U target, validate it with repeatable SDS tests on an FVP simulation
 model, and use the CMSIS Developer Assistant to deploy, measure, and debug the
@@ -38,13 +39,15 @@ the same software with its actual peripherals, memory system, timing, and data.
 
 ## Edge AI application template
 
-The [CMSIS-Executorch template](https://github.com/Arm-Examples/CMSIS-Executorch)
+The [ExecuTorch template](https://github.com/Arm-Examples/ExecuTorch-template)
 provides a working starting point for this integration. It connects a PyTorch
-ML model to the ExecuTorch runtime, the Arm Ethos-U backend, CMSIS-Toolbox, and
-the [CMSIS-Ethos-U pack](https://www.keil.arm.com/packs/cmsis-ethos-u-arm/overview/).
+ML model to the ExecuTorch runtime and the Arm Ethos-U backend, with reference
+projects for CMSIS and Zephyr. This tutorial uses the CMSIS projects, which
+combine CMSIS-Toolbox with the
+[CMSIS-Ethos-U pack](https://www.keil.arm.com/packs/cmsis-ethos-u-arm/overview/).
 The template includes Corstone reference targets, but its workflow applies to
-all Ethos-U configurations. It provides a repeatable path from model export and
-integration to execution on an FVP or real hardware.
+other Cortex-M and Ethos-U configurations. It provides a repeatable path from
+model export and integration to execution on an FVP or real hardware.
 
 ![ExecuTorch workflow](ExecuTorch.png "ExecuTorch workflow for Arm Cortex-M and Ethos-U")
 
@@ -126,15 +129,16 @@ then reload VS Code.
 
 ### Create a repository from the template
 
-Open [CMSIS-Executorch](https://github.com/Arm-Examples/CMSIS-Executorch) and
+Open the [ExecuTorch template](https://github.com/Arm-Examples/ExecuTorch-template) and
 select **Use this template**. Clone the new repository and open its folder in
 VS Code.
 
-Choose the solution that matches the NPU family you intend to target:
+This tutorial uses the CMSIS projects. Choose the solution that matches the NPU
+family you intend to target:
 
-- For Ethos-U85, select `cmsis-executorch.csolution.yml`.
+- For Ethos-U85, select `cmsis-u85/cmsis-u85.csolution.yml`.
 - For Ethos-U55 or Ethos-U65, select
-  `cmsis-executorch-u55.csolution.yml` as the starting point.
+  `cmsis-u55/cmsis-u55.csolution.yml` as the starting point.
 
 In the VS Code CMSIS view, select **... > Select Active Solution from
 Workspace**, then choose the solution above. Load the project this way before
@@ -142,9 +146,10 @@ continuing: the CMSIS Solution extension creates the workspace tasks used to
 set up the Python environment and generate the AI layer.
 
 With the solution loaded, follow the template README section
-[Set up the project tools](https://github.com/Arm-Examples/CMSIS-Executorch#2-set-up-the-project-tools).
-It covers tool installation and the generated task that creates the Python
-environment used to export the ML model for ExecuTorch.
+[Start a template](https://github.com/Arm-Examples/ExecuTorch-template#start-a-template).
+It covers tool installation and the task that creates the Python environment
+used to export the ML model for ExecuTorch. The selected project directory's
+README explains its target sets and build and run commands.
 
 Build and run the supplied reference configuration once before changing
 anything. This separates template or tool-installation issues from your own
@@ -161,7 +166,7 @@ available in every workspace.
 Check that the agent can see the project before asking it to make changes:
 
 ```text
-Inspect this CMSIS-Executorch workspace. Identify the loaded solution, active
+Inspect this ExecuTorch-template workspace. Identify the loaded solution, active
 target, required packs, compiler, and available debug adapters. Do not modify
 the project yet.
 ```
@@ -177,7 +182,8 @@ is not attached yet. Ask for a self-test so that the result is visible without
 a camera, microphone, or sensor:
 
 ```text
-Starting from CMSIS-Executorch, create <application> for the Alif Ensemble E7
+Starting from Arm-Examples/ExecuTorch-template, using the cmsis-u55 project as
+the starting point, create <application> for the Alif Ensemble E7
 AppKit, using its <camera, microphone, or sensor> and <display>. The board is not
 attached yet: do all tests on the FVP. Justify the ML model you select and its
 license. Build a self-test into the application that runs a fixed input at
@@ -423,8 +429,9 @@ shape is the same.
 The first request was the whole application:
 
 ```text
-Starting from CMSIS-Executorch, create a pose-estimation application on the Alif
-Ensemble E7 AppKit attached to this computer, using its camera.
+Starting from Arm-Examples/ExecuTorch-template, using the cmsis-u55 project as
+the starting point, create a pose-estimation application on the Alif Ensemble
+E7 AppKit attached to this computer, using its camera.
 ```
 
 The agent selected
@@ -535,12 +542,13 @@ inference, while the Cortex-M application handles the camera and display
 pipelines, tracks vehicles, and counts line crossings.
 
 It demonstrates board integration, camera and display pipelines, an embedded
-UI, and SDS recording over USB. Use it as a example to bring your own applications
-into a new CMSIS-Executorch project.
+UI, and SDS recording over USB. Use it as an example to bring your own applications
+into a new [ExecuTorch template](https://github.com/Arm-Examples/ExecuTorch-template)
+project.
 
 The video shows recorded camera data replayed to the Alif Ensemble E7 AppKit
 over SDS. Without SDS playback, the application uses the board's camera.
-The video of the display is also capture using an SDS data stream.
+The video of the display is also captured using an SDS data stream.
 
 <br clear="left"/>
 
@@ -550,9 +558,9 @@ The agent runs these steps through the CMSIS Developer Assistant and the
 workspace tasks. For a CI script, or to follow along by hand:
 
 ```bash
-cbuild setup <solution>.csolution.yml --active <target> --packs   # writes <solution>.cbuild-mlops.yml
-.venv/bin/python create_ai_layer.py <solution>.cbuild-mlops.yml   # regenerates ai_layer
-cbuild <solution>.csolution.yml --active <target>                 # builds the application
+cbuild setup <solution-dir>/<solution>.csolution.yml --active <target> --packs  # writes *.cbuild-mlops.yml
+.venv/bin/python model_conversion/create_ai_layer.py <solution-dir>/<solution>.cbuild-mlops.yml
+cbuild <solution-dir>/<solution>.csolution.yml --active <target>                # builds the application
 ```
 
 > [!NOTE]
@@ -566,7 +574,7 @@ Task > Create AI layer** runs it.
 
 ## Further reading
 
-- [CMSIS-Executorch template](https://github.com/Arm-Examples/CMSIS-Executorch)
+- [ExecuTorch template](https://github.com/Arm-Examples/ExecuTorch-template)
 - [CMSIS ExecuTorch traffic counter](https://github.com/Arm-Examples/CMSIS-Executorch-Traffic-Counter)
 - [CMSIS Developer Assistant on the VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-developer-assistant)
 - [CMSIS-Ethos-U documentation](https://arm-software.github.io/CMSIS-Ethos-U/)
