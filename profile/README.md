@@ -58,10 +58,15 @@ The [ExecuTorch on Real Devices](executorch.md) tutorial demonstrates these feat
 with a CMSIS-ExecuTorch template, FVP simulation, SDS data playback, and validation
 on Cortex-M and Ethos-U hardware.
 
+> **Starting a new project?** Use the
+> [ExecuTorch template](https://github.com/Arm-Examples/ExecuTorch-template).
+> It provides ready-to-use CMSIS and Zephyr projects for Cortex-M and Ethos-U.
+
 | Example | Hardware | Content |
 |:--------|:---------|:--------|
-| [CMSIS-ExecuTorch](https://github.com/Arm-Examples/CMSIS-ExecuTorch) | Various | Template for ML applications using the PyTorch / ExecuTorch workflow. |
-| [CMSIS-Executorch-Traffic-Counter](https://github.com/Arm-Examples/CMSIS-Executorch-Traffic-Counter) | Alif DevKit-E7 |  Ultralytics YOLO26n ported to Ethos-U55 using the [CMSIS Developer Assistent](https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-developer-assistant). |
+| [ExecuTorch-template](https://github.com/Arm-Examples/ExecuTorch-template) | Cortex-M and Ethos-U | **Recommended starting point for new projects.** Select **Use this template** to create a CMSIS or Zephyr application using ExecuTorch. |
+| [CMSIS-ExecuTorch](https://github.com/Arm-Examples/CMSIS-ExecuTorch) | Various | Existing template used by the *ExecuTorch on Real Devices* tutorial. |
+| [CMSIS-Executorch-Traffic-Counter](https://github.com/Arm-Examples/CMSIS-Executorch-Traffic-Counter) | Alif DevKit-E7 | Ultralytics YOLO26n ported to Ethos-U55 using the [CMSIS Developer Assistant](https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-developer-assistant). |
 
 [<img src="executorch-hackathon.png" alt="ExecuTorch Hackathon" width="317" height="109" align="left">](https://lnkd.in/p/ew3CeDDa "ExecuTorch Hackathon")
 
